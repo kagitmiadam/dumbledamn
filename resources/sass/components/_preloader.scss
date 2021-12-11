@@ -1,0 +1,98 @@
+.pre-loader {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+    -webkit-animation: hidePreloader .5s normal forwards;
+    -o-animation: hidePreloader .5s normal forwards;
+    animation: hidePreloader .5s normal forwards;
+    animation-delay: 1s;
+    animation-iteration-count: 1;
+    .veil {
+        width: 0;
+        height: 0;
+        border-right: 80px solid transparent;
+        border-bottom: 140px solid #000;
+        border-left: 80px solid transparent;
+        position: relative;
+    }
+
+    .veil:after {
+        width: 0;
+        height: 0;
+        border-right: 90px solid transparent;
+        border-bottom: 160px solid #fff;
+        border-left: 90px solid transparent;
+        position: absolute;
+        top: -13.5px;
+        left: -90px;
+        z-index: -1;
+        content: '';
+    }
+
+    .stone {
+        width: 95px;
+        height: 95px;
+        border: 5px solid #fff;
+        border-radius: 50%;
+        position: relative;
+        left: -49px;
+        bottom: -46px;
+        transition: left 1s;
+        -webkit-animation: stone infinite 1s linear;
+        -o-animation: stone infinite 1s linear;
+        animation: stone infinite 1s linear;
+    }
+
+    .wand {
+        width: 5px;
+        height: 145px;
+        background: #fff;
+        position: absolute;
+        top: 0px;
+        left: -2.5px;
+        transition: left 1s;
+        -webkit-animation: wand infinite 1s linear;
+        -o-animation: wand infinite 1s linear;
+        animation: wand infinite 1s linear;
+    }
+
+    @keyframes wand {
+        0% {
+            left: -2.5px;
+        }
+        50% {
+            left: 110px;
+        }
+        100% {
+            left: -2.5px;
+        }
+    }
+    @keyframes stone {
+        0% {
+            left: -46px;
+        }
+        50% {
+            left: -200px;
+        }
+        100% {
+            left: -46px;
+        }
+    }
+    @keyframes hidePreloader {
+        0% {
+            opacity: 1;
+            visibility: visible;
+        }
+        100% {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+}

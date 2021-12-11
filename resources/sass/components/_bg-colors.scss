@@ -1,0 +1,78 @@
+// CT's Partials | Background
+// primary-background-color
+.bg-primary {background:$primary-color;}
+.bg-primary-dark {background:$primary-color-dark;}
+.bg-primary-light {background:$primary-color-light;}
+.bg-primary-text {background:$primary-color-text;}
+// secondary-background-color
+.bg-secondary {background:$secondary-color;}
+.bg-secondary-dark {background:$secondary-color-dark;}
+.bg-secondary-light {background:$secondary-color-light;}
+.bg-secondary-text {background:$secondary-color-text;}
+// third-background-color
+.bg-third {background:$third-color;}
+.bg-third-dark {background:$third-color-dark;}
+.bg-third-light {background:$third-color-light;}
+.bg-third-text {background:$third-color-text;}
+// gray-background-color
+.bg-gray {background:$gray-color;}
+.bg-gray-dark {background:$gray-color-dark;}
+.bg-gray-light {background:$gray-color-light;}
+.bg-gray-text {background:$gray-color-text;}
+// yellow-background-color
+.bg-yellow {background:$yellow-color;}
+.bg-yellow-dark {background:$yellow-color-dark;}
+.bg-yellow-light {background:$yellow-color-light;}
+.bg-yellow-text {background:$yellow-color-text;}
+// green-background-color
+.bg-green {background:$green-color;}
+.bg-green-dark {background:$green-color-dark;}
+.bg-green-light {background:$green-color-light;}
+.bg-green-text {background:$green-color-text;}
+// red-background-color
+.bg-red {background:$red-color;}
+.bg-red-dark {background:$red-color-dark;}
+.bg-red-light {background:$red-color-light;}
+.bg-red-text {background:$red-color-text;}
+// blue-background-color
+.bg-blue {background:$blue-color;}
+.bg-blue-dark {background:$blue-color-dark;}
+.bg-blue-light {background:$blue-color-light;}
+.bg-blue-text {background:$blue-color-text;}
+// bg-gryffindor-color
+.bg-gryffindor-color {background:$gryffindor-color;color:#fff;}
+.bg-gryffindor-color-dark {background:$gryffindor-color-dark;color:#fff;}
+.bg-gryffindor-color-light {background:$gryffindor-color-light;color:#fff;}
+.bg-gryffindor-color-text {background:$gryffindor-color-text;color:#fff;}
+.btn-gryffindor{background: $gryffindor-color; border-color: $gryffindor-color; color: $gryffindor-color-text; &:hover{background: $gryffindor-color-dark; border-color: $gryffindor-color-dark; color: $gryffindor-color;}}
+// bg-slytherin-color
+.bg-slytherin-color {background:$slytherin-color;color:#fff;}
+.bg-slytherin-color-dark {background:$slytherin-color-dark;color:#fff;}
+.bg-slytherin-color-light {background:$slytherin-color-light;color:#fff;}
+.bg-slytherin-color-text {background:$slytherin-color-text;color:#fff;}
+.btn-slytherin{background: $slytherin-color; border-color: $slytherin-color; color: $slytherin-color-text; &:hover{background: $slytherin-color-dark; border-color: $slytherin-color-dark; color: $slytherin-color;}}
+// bg-ravenclaw-color
+.bg-ravenclaw-color {background:$ravenclaw-color;color:#fff;}
+.bg-ravenclaw-color-dark {background:$ravenclaw-color-dark;color:#fff;}
+.bg-ravenclaw-color-light {background:$ravenclaw-color-light;color:#fff;}
+.bg-ravenclaw-color-text {background:$ravenclaw-color-text;color:#fff;}
+.btn-ravenclaw{background: $ravenclaw-color; border-color: $ravenclaw-color; color: $ravenclaw-color-text; &:hover{background: $ravenclaw-color-dark; border-color: $ravenclaw-color-dark; color: $ravenclaw-color;}}
+// bg-hufflepuff-color
+.bg-hufflepuff-color {background:$hufflepuff-color;color:#fff;}
+.bg-hufflepuff-color-dark {background:$hufflepuff-color-dark;color:#fff;}
+.bg-hufflepuff-color-light {background:$hufflepuff-color-light;color:#fff;}
+.bg-hufflepuff-color-text {background:$hufflepuff-color-text;color:#fff;}
+.btn-hufflepuff{background: $hufflepuff-color; border-color: $hufflepuff-color; color: $hufflepuff-color-text; &:hover{background: $hufflepuff-color-dark; border-color: $hufflepuff-color-dark; color: $hufflepuff-color;}}
+// social-media-background-color
+.bg-facebook{background:$facebook-color;}
+.bg-twitter{background:$twitter-color;}
+.bg-pinterest{background:$pinterest-color;}
+.bg-google{background:$google-color;}
+.bg-google-plus{background:$google-plus-color;}
+.bg-tumblr{background:$tumblr-color;}
+.bg-instagram{background:$instagram-color;}
+.bg-youtube{background:$youtube-color;}
+// other-background-color
+.bg-white {background: $white-color;}
+.bg-black {background: $black-color;}
+.bg-transparent{background: transparent};

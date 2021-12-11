@@ -1,0 +1,627 @@
+$beige: rgb(230, 186, 147);
+$beige-tone: rgb(219, 175, 136);
+$brown-light: #cc8351;
+$brown: rgb(133, 96, 69);
+$brown-dark: #6c4c34;
+$brown-darker: #815230;
+$brown-shade: rgb(115, 112, 107);
+$ravenclaw-color-light: #c0d8e0;
+$slytherin-color-light: #ccc;
+$hufflepuff-color-light: #111;
+$silver: #ccc;
+$gold: #ffbf00;
+$black: #111;
+#sorting-hat {
+    .logout-field {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        right: 0;
+        top: 10px;
+        p {
+            margin-right: 10px;
+        }
+    }
+    .main-content__wrapper {
+        text-align: center;
+        padding: 2em;
+        transition: 0.3s ease;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    @mixin bg-gradient($deg, $color1, $color2) {
+        background: linear-gradient( $deg, $color1 5%, $color2 5%, $color2 10%, $color1 10%, $color1 20%, $color2 20%, $color2 30%, $color1 30%, $color1 45%, $color2 45%, $color2 55%, $color1 55%, $color1 65%, $color2 65%, $color2 70%);
+    }
+    
+    .gryffindor {
+        background: $gryffindor-color;
+        .avatar__coat {
+            &:before,
+            &:after {
+                background: $gryffindor-color;
+            }
+        }
+        .avatar__tie {
+            @include bg-gradient(306deg, $gryffindor-color, $gold);
+            &:before {
+                @include bg-gradient(-306deg, $gryffindor-color, $gold);
+            }
+        }
+    }
+    
+    .hufflepuff {
+        background: $hufflepuff-color;
+        .avatar__coat {
+            &:before,
+            &:after {
+                background: $hufflepuff-color;
+            }
+        }
+        .avatar__tie {
+            @include bg-gradient(306deg, $hufflepuff-color, $hufflepuff-color-light);
+            &:before {
+                @include bg-gradient(-306deg, $hufflepuff-color, $hufflepuff-color-light);
+            }
+        }
+    }
+    
+    .ravenclaw {
+        background: $ravenclaw-color;
+        .avatar__coat {
+            &:before,
+            &:after {
+                background: $ravenclaw-color;
+            }
+        }
+        .avatar__tie {
+            @include bg-gradient(306deg, $ravenclaw-color, $ravenclaw-color-light);
+            &:before {
+                @include bg-gradient(-306deg, $ravenclaw-color, $ravenclaw-color-light);
+            }
+        }
+    }
+    
+    .slytherin {
+        background: $slytherin-color;
+        .avatar__coat {
+            &:before,
+            &:after {
+                background: $slytherin-color;
+            }
+        }
+        .avatar__tie {
+            @include bg-gradient(306deg, $slytherin-color, $slytherin-color-light);
+            &:before {
+                @include bg-gradient(-306deg, $slytherin-color, $slytherin-color-light);
+            }
+        }
+    }
+    
+    .slytherin,
+    .gryffindor,
+    .ravenclaw {
+        .sorting-hat__answer,
+        aside.context,
+        aside.context a,
+        .sort-house,
+        .avatar-gender {
+            color: #fff;
+        }
+        .avatar-gender input:checked+label:after {
+            background: #fff;
+        }
+        footer a {
+            border: 1px dashed #fff;
+            color: #fff;
+        }
+    }
+    
+    .avatar {
+        margin: -30px auto 0;
+        text-align: center;
+        position: relative;
+        display: inline-block;
+        &:before {
+            width: 320px;
+            height: 320px;
+            background: rgba(255, 255, 255, 0.3);
+            content: "";
+            position: absolute;
+            z-index: 0;
+            border-radius: 50%;
+            left: -68px;
+            top: -155px;
+        }
+        &__head {
+            width: 186px;
+            height: 132px;
+            margin: auto;
+            position: relative;
+            background: linear-gradient(to bottom, $beige, $beige-tone);
+            box-shadow: inset 0 -4px 10px rgba($brown, 0.15), 0 2px 3px rgba(0, 0, 0, 0.05);
+            border-radius: 50px 50px 40px 40px;
+            z-index: 4;
+        }
+        &__eyes {
+            width: 35px;
+            height: 38px;
+            border-radius: 50%;
+            background: #333;
+            position: absolute;
+            top: 50px;
+            z-index: 2;
+            &.left {
+                left: 30px;
+            }
+            &.right {
+                right: 30px;
+            }
+            &:before {
+                content: "";
+                position: absolute;
+                width: 120%;
+                height: 0;
+                left: 0;
+                margin-top: -15px;
+                border-top: 8px solid $brown;
+                border-radius: 10px 10px 0 0;
+                margin-left: -10%;
+            }
+        }
+        &__ears {
+            z-index: 1;
+            width: 20px;
+            height: 40px;
+            position: absolute;
+            top: 45px;
+            background: $beige-tone;
+            left: -15px;
+            border-radius: 100% 50% 50% 100%;
+            box-shadow: inset -5px -10px 20px rgba($brown, 0.1);
+            &.right {
+                right: -15px;
+                left: auto;
+                border-radius: 50% 100% 100% 50%;
+            }
+        }
+        &__hair {
+            width: 114%;
+            height: 120px;
+            background: $brown;
+            border-radius: 50% 50% 30px 30px;
+            position: absolute;
+            top: -40px;
+            left: -7%;
+            &:after {
+                content: "";
+                position: absolute;
+                z-index: 5;
+                width: 140px;
+                height: 60px;
+                top: 0px;
+                border-radius: 40% 100% 3px 40px;
+                background: $brown;
+                transform: rotate(4deg);
+                right: -2px;
+            }
+            &:before {
+                content: none;
+                position: absolute;
+                width: 100%;
+                height: 110px;
+                background: linear-gradient( to right, $brown, $brown-dark 50%, $brown-dark 60%, $brown);
+                top: 110px;
+                left: 0;
+                border-radius: 0 0 30px 30px;
+            }
+            &.female:before {
+                content: '';
+            }
+        }
+        &__coat {
+            width: 130px;
+            height: 60px;
+            background: #333;
+            position: relative;
+            margin: -10px auto 0;
+            border-radius: 60px 60px 0 0;
+            z-index: 1;
+            overflow: hidden;
+            &:before,
+            &:after {
+                content: "";
+                position: absolute;
+                height: 120%;
+                width: 30px;
+                background: $silver;
+                top: 0;
+                left: 50%;
+                margin-left: -30px;
+                border-radius: 70% 80% 80% 70%/25% 25% 130% 130%;
+                transform: rotate(-20deg);
+            }
+            &:after {
+                transform: rotate(20deg);
+                margin: 0;
+            }
+        }
+        &__shirt {
+            width: 35px;
+            height: 70px;
+            background: #f9f9f9;
+            margin: auto;
+            //background: linear-gradient(to bottom, var(--color), var(--color2));
+            border-radius: 70% 80% 80% 70%/25% 25% 130% 130%;
+            position: relative;
+            z-index: 2;
+        }
+        &__tie {
+            @include bg-gradient(306deg, $black, $black);
+            width: 18px;
+            margin: auto;
+            height: 100%;
+            border-radius: 90% 60% 2px 2px/130% 130% 25% 25%;
+            &:before {
+                content: "";
+                position: absolute;
+                width: 25px;
+                height: 25px;
+                border-radius: 50% 50% 10px 10px / 25% 25% 130% 130%;
+                margin: auto;
+                top: -3px;
+                left: 0;
+                right: 0;
+                background: black;
+                @include bg-gradient(-306deg, $black, $black);
+                box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+            }
+        }
+        &__mouth {
+            background: #333;
+            position: absolute;
+            width: 10px;
+            height: 5px;
+            margin: auto;
+            left: 0;
+            right: 0;
+            top: 95px;
+            border-radius: 50%;
+        }
+    }
+    
+    .sorting-hat {
+        position: relative;
+        height: 300px;
+        &__top {
+            position: relative;
+            background: $brown-darker;
+            height: 40px;
+            width: 180px;
+            margin: auto;
+            border-radius: 40px 40px 50% 50%;
+            top: 170px;
+            z-index: 13;
+            box-shadow: inset 0 -3px 4px 8px rgba($brown-dark, 0.4);
+            opacity: 0;
+            &:before {
+                content: "";
+                position: absolute;
+                background: $brown-darker;
+                width: 165px;
+                height: 70px;
+                bottom: 20px;
+                left: 5px;
+                border-radius: 50% 50% 120% 10% / 130% 130% 25% 25%;
+            }
+            &:after {
+                content: "";
+                position: absolute;
+                bottom: 65px;
+                left: 15px;
+                border-left: 80px solid transparent;
+                border-right: 65px solid transparent;
+                border-bottom: 120px solid $brown-darker;
+            }
+        }
+        &__base {
+            width: 250px;
+            background: $brown-darker;
+            height: 35px;
+            border-radius: 50%;
+            margin: auto;
+            top: 195px;
+            position: relative;
+            z-index: 12;
+            margin-top: -50px;
+            opacity: 0;
+        }
+        &__eye {
+            z-index: 15;
+            background: $brown-dark;
+            width: 45px;
+            height: 45px;
+            position: absolute;
+            margin: auto;
+            left: 50%;
+            bottom: 100px;
+            margin-left: -48px;
+            border-radius: 100% 0px;
+            transform: rotate(50deg);
+            box-shadow: inset 2px 1px 10px $brown-darker, inset -2px -3px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 50px;
+            opacity: 0;
+            &.right {
+                margin-left: 3px;
+                transform: rotate(-50deg) scaleX(-1);
+            }
+        }
+        &__mouth {
+            width: 150px;
+            height: 30px;
+            background: $brown-dark;
+            position: absolute;
+            margin: auto;
+            bottom: 70px;
+            left: 50%;
+            margin-left: -75px;
+            z-index: 15;
+            border-radius: 0 100%;
+            transform: rotate(-3deg);
+            box-shadow: inset 2px 1px 10px $brown-darker, inset -2px -3px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 50px;
+            opacity: 0;
+        }
+        &__answer {
+            font: 32px "Lobster Two", sans-serif;
+            letter-spacing: 1.5px;
+            text-transform: capitalize;
+            position: absolute;
+            transform: rotate(-15deg);
+            left: 50%;
+            margin-left: -220px;
+            top: 100px;
+            display: inline-block;
+            z-index: 5;
+            width: 0;
+            opacity: 0;
+            &:before {
+                content: "(";
+                position: absolute;
+                font: 700 40px "Comfortaa";
+                border-radius: 10px;
+                top: 45px;
+                left: 50%;
+                transform: rotate(-20deg);
+            }
+        }
+    }
+    
+    .button-field {
+        height: 75px;
+        margin: 40px auto 0;
+    }
+    .avatar-gender  {
+        .hide {
+            opacity: 0;
+            visibility: hidden;
+            display: none;
+        }
+    }
+    .next-page,
+    .sort-house {
+        border: 3px solid;
+        background: transparent;
+        font-size: 35px;
+        margin: auto 0;
+        padding: 8px 20px;
+        cursor: pointer;
+        position: relative;
+        color: #fff;
+        transition: .45s ease;
+        &.hide {
+            opacity: 0;
+            visibility: hidden;
+            display: none;
+        }
+        &:before {
+            content: "";
+            position: absolute;
+            width: calc(100% - 4px);
+            height: calc(100% - 4px);
+            left: 2px;
+            top: 2px;
+            border: 2px solid;
+            transition: .45s ease;
+        }
+        &:hover {
+            background: #fff;
+            color: #000;
+            &:before {
+                width: calc(100% + 4px);
+                height: calc(100% + 4px);
+                transition: 0.3s ease;
+                left: -2px;
+                top: -2px;
+                right: auto;
+            }
+        }
+        &:focus {
+            outline: none;
+        }
+    }
+    
+    .avatar-gender {
+        display: flex;
+        min-width: 300px;
+        max-width: 500px;
+        margin: 2em auto 0;
+        align-items: center;
+        transition: .45s ease;
+        &.hide {
+            opacity: 0;
+            visibility: hidden;
+        }
+        >p,
+        div {
+            flex: auto;
+        }
+        .gender-select {
+            display: flex;
+            align-items: center;
+        }
+        p {
+            font-weight: 700;
+        }
+        input {
+            opacity: 0;
+            &:checked+label:after {
+                content: '';
+                position: absolute;
+                width: 11px;
+                height: 11px;
+                top: 10px;
+                left: -19px;
+                background: #000;
+                border-radius: 50%;
+            }
+        }
+        label {
+            position: relative;
+            padding: 5px;
+            margin: 0 !important;
+            &:before {
+                content: '';
+                position: absolute;
+                width: 17px;
+                height: 17px;
+                border: 2px solid;
+                border-radius: 50%;
+                left: -22px;
+                top: 7px;
+                background: #fff;
+            }
+        }
+    }
+    
+    //animations
+    .main-content__wrapper,
+    .avatar__tie,
+    .avatar__coat {
+        transition: background 0.3s ease, color 0.3s ease;
+    }
+    
+    .avatar__mouth.animate {
+        transition: 0.5s ease 2.5s;
+        width: 40px;
+        height: 16px;
+        border-radius: 0 0 50px 50px;
+    }
+    
+    .sorting-hat.animate {
+        .sorting-hat__answer {
+            transition: opacity 0.4s ease 2.3s;
+            width: auto;
+            opacity: 1;
+        }
+        .sorting-hat__top {
+            top: 220px;
+            transition: 0.6s ease;
+            opacity: 1;
+        }
+        .sorting-hat__base,
+        .sorting-hat__eye,
+        .sorting-hat__mouth {
+            transition: 0.6s ease;
+            margin-top: 0;
+            margin-bottom: 0;
+            opacity: 1;
+        }
+        .sorting-hat__mouth {
+            animation: mouth-move 2.5s forwards 0.6s;
+        }
+        .sorting-hat__eye {
+            animation: eye-move-left 2.5s forwards 0.6s;
+            &.right {
+                animation: eye-move-right 2.5s forwards 0.6s;
+            }
+        }
+    }
+    
+    @keyframes mouth-move {
+        0% {
+            height: 20px;
+            border-radius: 50% 100%;
+        }
+        20% {
+            height: 15px;
+        }
+        60% {
+            height: 15px;
+            transform: rotate(8deg);
+        }
+        62% {
+            height: 28px;
+            border-radius: 100% 0;
+            transform: rotate(0deg);
+        }
+        80% {
+            height: 32px;
+        }
+        100% {
+            height: 20px;
+        }
+    }
+    
+    @keyframes eye-move-left {
+        0% {
+            transform: rotate(50deg);
+        }
+        20% {
+            height: 35px;
+            transform: rotate(58deg);
+        }
+        50% {
+            height: 35px;
+            transform: rotate(58deg);
+        }
+        54% {
+            height: 40px;
+            transform: rotate(58deg);
+        }
+        55% {
+            height: 45px;
+            transform: rotate(51deg);
+        }
+        80% {
+            transform: rotate(45deg);
+        }
+    }
+    
+    @keyframes eye-move-right {
+        0% {
+            transform: rotate(-50deg) scaleX(-1);
+        }
+        20% {
+            height: 35px;
+            transform: rotate(-58deg) scaleX(-1);
+        }
+        50% {
+            height: 35px;
+            transform: rotate(-58deg) scaleX(-1);
+        }
+        54% {
+            height: 40px;
+            transform: rotate(-58deg) scaleX(-1);
+        }
+        55% {
+            height: 45px;
+            transform: rotate(-49deg) scaleX(-1);
+        }
+        80% {
+            transform: rotate(-45deg) scaleX(-1);
+        }
+    }
+}

@@ -1,0 +1,73 @@
+// primary-color
+.dumbledamn-primary {color         : var(--primary-color);}
+.dumbledamn-primary-dark {color    : var(--primary-color-dark)}
+.dumbledamn-primary-light {color   : var(--primary-color-light)}
+.dumbledamn-primary-text {color    : var(--primary-color-text)}
+// secondary-color
+.dumbledamn-secondary {color       : var(--secondary-color)}
+.dumbledamn-secondary-dark {color  : var(--secondary-color-dark)}
+.dumbledamn-secondary-light {color : var(--secondary-color-light)}
+.dumbledamn-secondary-text {color  : var(--secondary-color-text)}
+// third-color
+.dumbledamn-third {color           : var(--third-color)}
+.dumbledamn-third-dark {color      : var(--third-color-dark)}
+.dumbledamn-third-light {color     : var(--third-color-light)}
+.dumbledamn-third-text {color      : var(--third-color-text)}
+// gray-color
+.dumbledamn-gray {color            :$gray-color;}
+.dumbledamn-gray-dark {color       :$gray-color-dark;}
+.dumbledamn-gray-light {color      :$gray-color-light;}
+.dumbledamn-gray-text {color       :$gray-color-text;}
+// yellow-color
+.dumbledamn-yellow {color          :$yellow-color;}
+.dumbledamn-yellow-dark {color     :$yellow-color-dark;}
+.dumbledamn-yellow-light {color    :$yellow-color-light;}
+.dumbledamn-yellow-text {color     :$yellow-color-text;}
+// green-color
+.dumbledamn-green {color           :$green-color;}
+.dumbledamn-green-dark {color      :$green-color-dark;}
+.dumbledamn-green-light {color     :$green-color-light;}
+.dumbledamn-green-text {color      :$green-color-text;}
+// red-color
+.dumbledamn-red {color             :$red-color;}
+.dumbledamn-red-dark {color        :$red-color-dark;}
+.dumbledamn-red-light {color       :$red-color-light;}
+.dumbledamn-red-text {color        :$red-color-text;}
+// blue-color
+.dumbledamn-blue {color            :$blue-color;}
+.dumbledamn-blue-dark {color       :$blue-color-dark;}
+.dumbledamn-blue-light {color      :$blue-color-light;}
+.dumbledamn-blue-text {color       :$blue-color-text;}
+// gryffindor-color
+.gryffindor-color {color      :$gryffindor-color;}
+.gryffindor-color-dark {color :$gryffindor-color-dark;}
+.gryffindor-color-light {color:$gryffindor-color-light;}
+.gryffindor-color-text {color :$gryffindor-color-text;}
+// slytherin-color
+.slytherin-color {color       :$slytherin-color;}
+.slytherin-color-dark {color  :$slytherin-color-dark;}
+.slytherin-color-light {color :$slytherin-color-light;}
+.slytherin-color-text {color  :$slytherin-color-text;}
+// ravenclaw-color
+.ravenclaw-color {color       :$ravenclaw-color;}
+.ravenclaw-color-dark {color  :$ravenclaw-color-dark;}
+.ravenclaw-color-light {color :$ravenclaw-color-light;}
+.ravenclaw-color-text {color  :$ravenclaw-color-text;}
+// hufflepuff-color
+.hufflepuff-color {color      :$hufflepuff-color;}
+.hufflepuff-color-dark {color :$hufflepuff-color-dark;}
+.hufflepuff-color-light {color:$hufflepuff-color-light;}
+.hufflepuff-color-text {color :$hufflepuff-color-text;}
+// social-media-color
+.dumbledamn-facebook{color         :$facebook-color;}
+.dumbledamn-twitter{color          :$twitter-color;}
+.dumbledamn-pinterest{color        :$pinterest-color;}
+.dumbledamn-google{color           :$google-color;}
+.dumbledamn-google-plus{color      :$google-plus-color;}
+.dumbledamn-tumblr{color           :$tumblr-color;}
+.dumbledamn-instagram{color        :$instagram-color;}
+.dumbledamn-youtube{color          :$youtube-color;}
+// other-color
+.dumbledamn-white {color           :$white-color;}
+.dumbledamn-black {color           :$black-color;}
+.dumbledamn-transparent {color     :transparent;}

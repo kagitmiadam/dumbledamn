@@ -1,0 +1,154 @@
+// primary-border
+.b-primary {border:1px solid $primary-color;}
+.b-primary-dark {border:1px solid $primary-color-dark;}
+.b-primary-light {border:1px solid $primary-color-light;}
+.b-primary-text {border:1px solid $primary-color-text;}
+// secondary-border
+.b-secondary {border:1px solid $secondary-color;}
+.b-secondary-dark {border:1px solid $secondary-color-dark;}
+.b-secondary-light {border:1px solid $secondary-color-light;}
+.b-secondary-text {border:1px solid $secondary-color-text;}
+// third-border
+.b-third {border:1px solid $third-color;}
+.b-third-dark {border:1px solid $third-color-dark;}
+.b-third-light {border:1px solid $third-color-light;}
+.b-third-text {border:1px solid $third-color-text;}
+// gray-border
+.b-gray {border:1px solid $gray-color;}
+.b-gray-dark {border:1px solid $gray-color-dark;}
+.b-gray-light {border:1px solid $gray-color-light;}
+.b-gray-text {border:1px solid $gray-color-text;}
+// yellow-border
+.b-yellow {border:1px solid $yellow-color;}
+.b-yellow-dark {border:1px solid $yellow-color-dark;}
+.b-yellow-light {border:1px solid $yellow-color-light;}
+.b-yellow-text {border:1px solid $yellow-color-text;}
+// green-border
+.b-green {border:1px solid $green-color;}
+.b-green-dark {border:1px solid $green-color-dark;}
+.b-green-light {border:1px solid $green-color-light;}
+.b-green-text {border:1px solid $green-color-text;}
+// red-border
+.b-red {border:1px solid $red-color;}
+.b-red-dark {border:1px solid $red-color-dark;}
+.b-red-light {border:1px solid $red-color-light;}
+.b-red-text {border:1px solid $red-color-text;}
+// blue-border
+.b-blue {border:1px solid $blue-color;}
+.b-blue-dark {border:1px solid $blue-color-dark;}
+.b-blue-light {border:1px solid $blue-color-light;}
+.b-blue-text {border:1px solid $blue-color-text;}
+// social-media-border
+.b-facebook{border:1px solid $facebook-color;}
+.b-twitter{border:1px solid $twitter-color;}
+.b-pinterest{border:1px solid $pinterest-color;}
+.b-google{border:1px solid $google-color;}
+.b-google-plus{border:1px solid $google-plus-color;}
+.b-tumblr{border:1px solid $tumblr-color;}
+.b-instagram{border:1px solid $instagram-color;}
+.b-youtube{border:1px solid $youtube-color;}
+// other-border
+.b-white {border:1px solid $white-color;}
+.b-black {border:1px solid $black-color;}
+.b-hr-color {border:1px solid var(--hr-color);}
+.b-transparent {border:1px solid transparent;}
+// gryffindor-border
+.b-gryffindor {border:1px solid $gryffindor-color;}
+.b-gryffindor-dark {border:1px solid $gryffindor-color-dark;}
+.b-gryffindor-light {border:1px solid $gryffindor-color-light;}
+.b-gryffindor-text {border:1px solid $gryffindor-color-text;}
+// slytherin-border
+.b-slytherin {border:1px solid $slytherin-color;}
+.b-slytherin-dark {border:1px solid $slytherin-color-dark;}
+.b-slytherin-light {border:1px solid $slytherin-color-light;}
+.b-slytherin-text {border:1px solid $slytherin-color-text;}
+// hufflepuff-border
+.b-hufflepuff {border:1px solid $hufflepuff-color;}
+.b-hufflepuff-dark {border:1px solid $hufflepuff-color-dark;}
+.b-hufflepuff-light {border:1px solid $hufflepuff-color-light;}
+.b-hufflepuff-text {border:1px solid $hufflepuff-color-text;}
+// ravenclaw-border
+.b-ravenclaw {border:1px solid $ravenclaw-color;}
+.b-ravenclaw-dark {border:1px solid $ravenclaw-color-dark;}
+.b-ravenclaw-light {border:1px solid $ravenclaw-color-light;}
+.b-ravenclaw-text {border:1px solid $ravenclaw-color-text;}
+// gryffindor-border-bottom
+.bb-gryffindor {border-bottom:1px solid $gryffindor-color;}
+.bb-gryffindor-dark {border-bottom:1px solid $gryffindor-color-dark;}
+.bb-gryffindor-light {border-bottom:1px solid $gryffindor-color-light;}
+.bb-gryffindor-text {border-bottom:1px solid $gryffindor-color-text;}
+// slytherin-border-bottom
+.bb-slytherin {border-bottom:1px solid $slytherin-color;}
+.bb-slytherin-dark {border-bottom:1px solid $slytherin-color-dark;}
+.bb-slytherin-light {border-bottom:1px solid $slytherin-color-light;}
+.bb-slytherin-text {border-bottom:1px solid $slytherin-color-text;}
+// hufflepuff-border-bottom
+.bb-hufflepuff {border-bottom:1px solid $hufflepuff-color;}
+.bb-hufflepuff-dark {border-bottom:1px solid $hufflepuff-color-dark;}
+.bb-hufflepuff-light {border-bottom:1px solid $hufflepuff-color-light;}
+.bb-hufflepuff-text {border-bottom:1px solid $hufflepuff-color-text;}
+// ravenclaw-border-bottom
+.bb-ravenclaw {border-bottom:1px solid $ravenclaw-color;}
+.bb-ravenclaw-dark {border-bottom:1px solid $ravenclaw-color-dark;}
+.bb-ravenclaw-light {border-bottom:1px solid $ravenclaw-color-light;}
+.bb-ravenclaw-text {border-bottom:1px solid $ravenclaw-color-text;}
+// gryffindor-border-left
+.bl-gryffindor {border-left:1px solid $gryffindor-color;}
+.bl-gryffindor-dark {border-left:1px solid $gryffindor-color-dark;}
+.bl-gryffindor-light {border-left:1px solid $gryffindor-color-light;}
+.bl-gryffindor-text {border-left:1px solid $gryffindor-color-text;}
+// slytherin-border-left
+.bl-slytherin {border-left:1px solid $slytherin-color;}
+.bl-slytherin-dark {border-left:1px solid $slytherin-color-dark;}
+.bl-slytherin-light {border-left:1px solid $slytherin-color-light;}
+.bl-slytherin-text {border-left:1px solid $slytherin-color-text;}
+// hufflepuff-border-left
+.bl-hufflepuff {border-left:1px solid $hufflepuff-color;}
+.bl-hufflepuff-dark {border-left:1px solid $hufflepuff-color-dark;}
+.bl-hufflepuff-light {border-left:1px solid $hufflepuff-color-light;}
+.bl-hufflepuff-text {border-left:1px solid $hufflepuff-color-text;}
+// ravenclaw-border-left
+.bl-ravenclaw {border-left:1px solid $ravenclaw-color;}
+.bl-ravenclaw-dark {border-left:1px solid $ravenclaw-color-dark;}
+.bl-ravenclaw-light {border-left:1px solid $ravenclaw-color-light;}
+.bl-ravenclaw-text {border-left:1px solid $ravenclaw-color-text;}
+// gryffindor-border-right
+.br-gryffindor {border-right:1px solid $gryffindor-color;}
+.br-gryffindor-dark {border-right:1px solid $gryffindor-color-dark;}
+.br-gryffindor-light {border-right:1px solid $gryffindor-color-light;}
+.br-gryffindor-text {border-right:1px solid $gryffindor-color-text;}
+// slytherin-border-right
+.br-slytherin {border-right:1px solid $slytherin-color;}
+.br-slytherin-dark {border-right:1px solid $slytherin-color-dark;}
+.br-slytherin-light {border-right:1px solid $slytherin-color-light;}
+.br-slytherin-text {border-right:1px solid $slytherin-color-text;}
+// hufflepuff-border-right
+.br-hufflepuff {border-right:1px solid $hufflepuff-color;}
+.br-hufflepuff-dark {border-right:1px solid $hufflepuff-color-dark;}
+.br-hufflepuff-light {border-right:1px solid $hufflepuff-color-light;}
+.br-hufflepuff-text {border-right:1px solid $hufflepuff-color-text;}
+// ravenclaw-border-right
+.br-ravenclaw {border-right:1px solid $ravenclaw-color;}
+.br-ravenclaw-dark {border-right:1px solid $ravenclaw-color-dark;}
+.br-ravenclaw-light {border-right:1px solid $ravenclaw-color-light;}
+.br-ravenclaw-text {border-right:1px solid $ravenclaw-color-text;}
+// gryffindor-border-top
+.bt-gryffindor {border-top:1px solid $gryffindor-color;}
+.bt-gryffindor-dark {border-top:1px solid $gryffindor-color-dark;}
+.bt-gryffindor-light {border-top:1px solid $gryffindor-color-light;}
+.bt-gryffindor-text {border-top:1px solid $gryffindor-color-text;}
+// slytherin-border-top
+.bt-slytherin {border-top:1px solid $slytherin-color;}
+.bt-slytherin-dark {border-top:1px solid $slytherin-color-dark;}
+.bt-slytherin-light {border-top:1px solid $slytherin-color-light;}
+.bt-slytherin-text {border-top:1px solid $slytherin-color-text;}
+// hufflepuff-border-top
+.bt-hufflepuff {border-top:1px solid $hufflepuff-color;}
+.bt-hufflepuff-dark {border-top:1px solid $hufflepuff-color-dark;}
+.bt-hufflepuff-light {border-top:1px solid $hufflepuff-color-light;}
+.bt-hufflepuff-text {border-top:1px solid $hufflepuff-color-text;}
+// ravenclaw-border-top
+.bt-ravenclaw {border-top:1px solid $ravenclaw-color;}
+.bt-ravenclaw-dark {border-top:1px solid $ravenclaw-color-dark;}
+.bt-ravenclaw-light {border-top:1px solid $ravenclaw-color-light;}
+.bt-ravenclaw-text {border-top:1px solid $ravenclaw-color-text;}

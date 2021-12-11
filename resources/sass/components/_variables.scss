@@ -1,0 +1,78 @@
+// font-family
+$font-family                 : 'Poppins', sans-serif;
+$font-family-hp              : 'Harry Potter', sans-serif;
+// primary-color
+$primary-color               : #c38fff;
+$primary-color-dark          : darken($primary-color, 10%);
+$primary-color-light         : lighten($primary-color, 10%);
+$primary-color-text          : #212121;
+// secondary-color
+$secondary-color             : #71b0b3;
+$secondary-color-dark        : darken($secondary-color, 10%);
+$secondary-color-light       : lighten($secondary-color, 10%);
+$secondary-color-text        : #212121;
+// third-color
+$third-color                 : #3700b3;
+$third-color-dark            : darken($third-color, 10%);
+$third-color-light           : lighten($third-color, 10%);
+$third-color-text            : #212121;
+// gray-color
+$gray-color                  : #fbfbfb;
+$gray-color-dark             : darken($gray-color, 10%);
+$gray-color-light            : lighten($gray-color, 10%);
+$gray-color-text             : #000;
+// yellow-color
+$yellow-color                : #fcf8e3;
+$yellow-color-dark           : darken($yellow-color, 10%);
+$yellow-color-light          : lighten($yellow-color, 10%);
+$yellow-color-text           : #8a6d3b;
+// green-color
+$green-color                 : #98c44d;
+$green-color-dark            : darken($green-color, 10%);
+$green-color-light           : lighten($green-color, 10%);
+$green-color-text            : #3c763d;
+// red-color
+$red-color                   : #f2dede;
+$red-color-dark              : darken($red-color, 10%);
+$red-color-light             : lighten($red-color, 10%);
+$red-color-text              : #a94442;
+// blue-color
+$blue-color                  : #d9edf7;
+$blue-color-dark             : darken($blue-color, 10%);
+$blue-color-light            : lighten($blue-color, 10%);
+$blue-color-text             : #31708f;
+// gryffindor-color
+$gryffindor-color            : #9c1203;
+$gryffindor-color-dark       : darken($gryffindor-color, 30%);
+$gryffindor-color-light      : lighten($gryffindor-color, 30%);
+$gryffindor-color-text       : #fff;
+// slytherin-color
+$slytherin-color             : #033807;
+$slytherin-color-dark        : darken($slytherin-color, 30%);
+$slytherin-color-light       : lighten($slytherin-color, 30%);
+$slytherin-color-text        : #fff;
+// ravenclaw-color
+$ravenclaw-color             : #00165e;
+$ravenclaw-color-dark        : darken($ravenclaw-color, 30%);
+$ravenclaw-color-light       : lighten($ravenclaw-color, 30%);
+$ravenclaw-color-text        : #fff;
+// hufflepuff-color
+$hufflepuff-color            : #e3a000;
+$hufflepuff-color-dark       : darken($hufflepuff-color, 30%);
+$hufflepuff-color-light      : lighten($hufflepuff-color, 30%);
+$hufflepuff-color-text       : #fff;
+// other-color
+$white-color                 : #fff;
+$black-color                 : #000;
+$transparent-color           : transparent;
+$border-color                : #ddd;
+$img-field-border-color      : #ddd;
+// Social Media color
+$facebook-color              : #4267b2;
+$twitter-color               : #55acee;
+$pinterest-color             : #cb2027;
+$google-color                : #4267b2;
+$google-plus-color           : #dc4e41;
+$tumblr-color                : #36465d;
+$instagram-color             : #d6249f;
+$youtube-color               : #c4302b;

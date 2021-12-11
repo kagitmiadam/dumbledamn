@@ -1,0 +1,188 @@
+#header {
+    height: 60px;
+    position: absolute;
+    width: calc(100% - 250px);
+    top: 0;
+    left: 250px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    position: relative;
+    .right-field {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+    .galleon-field {
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+        .character-currency {
+            display: flex;
+            margin-right: 5px;
+            .icon {
+                object-fit: contain;
+                width: 20px;
+                margin-right: 5px;
+            }
+        }
+    }
+    .period-cup-field {
+        position: relative;
+        .period-cup-icon {
+            padding: 2px 4px;
+            display: flex;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: .45s;
+            position: relative;
+            margin-right: 20px;
+            position: relative;
+            .icon {
+                object-fit: contain;
+                width: 20px;
+                max-height: 24px;
+                filter: invert(1);
+            }
+        }
+    }
+    .equipment-field {
+        position: relative;
+        &:hover,
+        &.active {
+            z-index: 5;
+            .equipment-icon {
+                background-color: #bdc1c6;
+                border-color: #bdc1c6;
+                border-radius: 0;
+            }
+        }
+        .equipment-icon {
+            padding: 2px 4px;
+            display: flex;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: .45s;
+            position: relative;
+            margin-right: 20px;
+            position: relative;
+            .icon {
+                object-fit: contain;
+                width: 20px;
+                max-height: 24px;
+            }
+        }
+        .equipment-menu {
+            opacity: 0;
+            visibility: hidden;
+            transition: .45s;
+            position: absolute;
+            top: 100%;
+            left: calc(-1000% + 30px);
+            width: 1000%;
+            border: 1px solid #bdc1c6;
+            background: #bdc1c6;
+            padding: 10px;
+            &.active {
+                display: block;
+                opacity: 1;
+                visibility: visible;
+            }
+            .title {
+                font-size: 18px;
+                text-align: center;
+                color: #212121;
+            }
+            .equipped-equipment {
+                .item {
+                    width: 50px;
+                    height: 50px;
+                    border: 1px solid #bdc1c6;
+                    border-radius: 3px;
+                    transition: .45s;
+                    background: #212121;
+                    &:hover {
+                        background: lighten(#212121, 20%);
+                    }
+                }
+            }
+            .new-equipment {
+                margin: 10px 0;
+                display: flex;
+                div {
+                    margin: 10px 0;
+                    margin-right: 10px;
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                    a {
+                        padding: 10px;
+                        border-radius: 3px;
+                        &:hover {
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .profile-field {
+        position: relative;
+        &:hover,
+        &.active {
+            z-index: 5;
+            .username {
+                background: #bdc1c6;
+                color: #212121;
+                border-radius: 0;
+                border-bottom-color: #212121;
+            }
+        }
+        .username {
+            cursor: pointer;
+            display: flex;
+            padding: 2px 10px;
+            border-radius: 3px;
+            transition: .45s;
+            position: relative;
+        }
+        .profile-menu {
+            opacity: 0;
+            visibility: hidden;
+            transition: .45s;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: 100%;
+            min-width: 150px;
+            border: 1px solid #bdc1c6;
+            background: #bdc1c6;
+            padding: 10px;
+            &.active {
+                display: block;
+                opacity: 1;
+                visibility: visible;
+            }
+            ul {
+                li {
+                    margin-bottom: 5px;
+                    padding-bottom: 5px;
+                    border-bottom: 1px solid #212121;
+                    &:last-child {
+                        margin-bottom: 0;
+                        padding-bottom: 0;
+                        border-bottom: none;
+                    }
+                    a {
+                        color: #000;
+                        cursor: pointer;
+                        &:hover {
+                            color: #212121;
+                            padding-left: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

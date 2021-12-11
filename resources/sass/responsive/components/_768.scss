@@ -1,0 +1,51 @@
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+
+}
+
+@media screen and (max-width: 768px) {
+    #homepage {
+        .bg-1,
+        .bg-2,
+        .bg-3 {
+            animation: none !important;
+        }
+        .field-1 {
+            .letter {
+                width: 100%;
+                img {width: 100%;}
+            }
+        }
+        .bg-1 {
+            -webkit-transform: translateX(100px) translateY(-130px) scale(.4) !important;
+            -moz-transform: translateX(100px) translateY(-130px) scale(.4) !important;
+            -ms-transform: translateX(100px) translateY(-130px) scale(.4) !important;
+            -o-transform: translateX(100px) translateY(-130px) scale(.4) !important;
+            transform: translateX(100px) translateY(-130px) scale(.4) !important;
+        }
+        .bg-2 {
+            -webkit-transform: translateX(100px) translateY(240px) scale(.4) !important;
+            -moz-transform: translateX(100px) translateY(240px) scale(.4) !important;
+            -ms-transform: translateX(100px) translateY(240px) scale(.4) !important;
+            -o-transform: translateX(100px) translateY(240px) scale(.4) !important;
+            transform: translateX(100px) translateY(240px) scale(.4) !important;
+        }
+        .bg-3 {
+            -webkit-transform: translateX(60px) translateY(260px) scale(.4) !important;
+            -moz-transform: translateX(60px) translateY(260px) scale(.4) !important;
+            -ms-transform: translateX(60px) translateY(260px) scale(.4) !important;
+            -o-transform: translateX(60px) translateY(260px) scale(.4) !important;
+            transform: translateX(60px) translateY(260px) scale(.4) !important;
+        }
+        .field-1 {
+            -webkit-transform: translateY(0) !important;
+            -moz-transform: translateY(0) !important;
+            -ms-transform: translateY(0) !important;
+            -o-transform: translateY(0) !important;
+            transform: translateY(0) !important;
+            z-index: 4;
+            .title {
+                font-size: 34px;
+            }
+        }
+    }
+}

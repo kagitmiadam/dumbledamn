@@ -1,0 +1,28 @@
+/*!
+ * Author: Canturk Ozdemir / Ali Özen
+ * Write with some love <3
+ * Team Name: Dumbledam
+ * Github Profile (Canturk Ozdemir): https://github.com/kagitmiadam
+ * Github Profile (Ali Ozen): https://github.com/aozen
+*/
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+@import url('http://fonts.cdnfonts.com/css/harry-potter');
+// Plugin
+@import 'plugin/bootstrap/bootstrap';
+// Components
+@import 'components/variables';
+@import 'components/colors';
+@import 'components/bg-colors';
+@import 'components/border-color';
+@import 'components/reset';
+@import 'components/preloader';
+@import 'components/sorting-hat';
+@import 'components/select-wand';
+@import 'components/header';
+@import 'components/sidebar';
+@import 'components/auth-app';
+// Pages
+@import 'pages/homepage';
+@import 'pages/auth-homepage';
+// Responsive
+@import 'responsive/responsive';
