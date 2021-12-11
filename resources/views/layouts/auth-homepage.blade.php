@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{asset('css/main.css')}}">
 </head>
 <body>
-<main id="auth-app" class="auth-app">
+<main id="auth-app" class="auth-app" style="background: url('{{asset('img/homepage/bg-1.png')}}')">
     @include('components.header')
     @include('components.left-sidebar')
     <section>

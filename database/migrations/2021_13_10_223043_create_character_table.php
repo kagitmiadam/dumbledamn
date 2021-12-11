@@ -18,9 +18,13 @@ class CreateCharacterTable extends Migration
             $table->integer('gender_id')->unsigned();
             $table->integer('school_id')->unsigned();
             $table->integer('school_class_id')->unsigned();
+            $table->integer('school_grade_id')->unsigned();
             
             $table->integer('preffered_core')->unsigned()->nullable();
             $table->integer('wand_id')->unsigned()->nullable();
+            $table->integer('gown_id')->unsigned()->nullable();
+            $table->integer('broom_id')->unsigned()->nullable();
+            $table->integer('pet_id')->unsigned()->nullable();
             
             $table->string('status')->default("Asa Seçim");
             $table->timestamps();
@@ -29,8 +33,12 @@ class CreateCharacterTable extends Migration
             $table->foreign('gender_id')->references('id')->on('gender')->onDelete('cascade');
             $table->foreign('school_id')->references('id')->on('school')->onDelete('cascade');
             $table->foreign('school_class_id')->references('id')->on('school_class')->onDelete('cascade');
+            $table->foreign('school_grade_id')->references('id')->on('school_grade')->onDelete('cascade');
 
             $table->foreign('wand_id')->references('id')->on('item')->onDelete('cascade');
+            $table->foreign('gown_id')->references('id')->on('item')->onDelete('cascade');
+            $table->foreign('broom_id')->references('id')->on('item')->onDelete('cascade');
+            $table->foreign('pet_id')->references('id')->on('item')->onDelete('cascade');
             $table->foreign('preffered_core')->references('id')->on('core')->onDelete('cascade');
         });
     }

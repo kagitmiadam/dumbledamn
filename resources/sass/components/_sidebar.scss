@@ -6,22 +6,52 @@
     position: fixed;
     top: 0;
     left: 0;
+    background: #212121;
+    padding: 10px 0;
     ul {
         li {
             margin-bottom: 10px;
-            padding-bottom: 10px;
-            padding-top: 10px;
             transition: .45s;
             &.menu {
                 &:hover {
-                    background: #bcbcbc;
+                    .menu-link {
+                        background: #4c4d50;
+                    }
+                }
+                span {
+                    display: flex;
+                    align-items: center;
                 }
                 a {
                     color: #fff;
                     display: flex;
+                    align-items: center;
                     width: 100%;
+                    padding: 10px;
+                    margin-bottom: 10px;
                     &:hover {
                         color: #fff;
+                    }
+                }
+                img {
+                    width: 32px;
+                    height: 32px;
+                    object-fit: contain;
+                    &.invert {
+                        margin-right: 10px;
+                        filter: invert(1);
+                    }
+                    &.img-right {
+                        margin-left: 10px;
+                    }
+                }
+                .menu-link {
+                    .down {
+                        max-width: 14px;
+                        filter: invert(1);
+                        margin-right: 0;
+                        margin-left: 10px;
+                        transition: .45s;
                     }
                 }
             }
@@ -43,12 +73,31 @@
             opacity: 0;
             visibility: hidden;
             display: none;
+            li {
+                a {
+                    padding: 10px 10px 10px 20px;
+                    font-size: 14px;
+                }
+            }
         }
         &.active {
+            .menu-field {
+                background: #4c4d50;
+            }
+            .menu-link {
+                .down {
+                    transform: rotate(180deg);
+                }
+            }
             .sub-menu {
                 opacity: 1;
                 visibility: visible;
                 display: block;
+                a {
+                    &:hover {
+                        background: #4c4d50;
+                    }
+                }
             }
         }
     }

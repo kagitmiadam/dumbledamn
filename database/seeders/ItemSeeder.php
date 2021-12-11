@@ -27,16 +27,29 @@ class ItemSeeder extends Seeder
                     'attack_power'  => $core_name->attack_power + $wood_name->attack_power,
                     'defence_power' => $core_name->defence_power + $wood_name->defence_power,
                     'based_count'   => 1,
-                    'price'         => $core_name->price + $wood_name->price
+                    'price'         => $core_name->price + $wood_name->price,
+                    'image'         => $core_name->price + $wood_name->price
                 ]);
             }
         }
         /* Evcil Hayvanlar | Pets */
         $pets = [
-            // 0: Name      1: Fiyat    2: Attack   3: Defence  4: Tür
-            ["Baykuş"       , 100       , 2         , 2         , "Başlangıç"],
-            ["Kurbağa"      , 100       , 2         , 2         , "Başlangıç"],
-            ["Kedi"         , 100       , 2         , 2         , "Başlangıç"],
+            // 0: Name              1: Fiyat    2: Attack   3: Defence  4: Tür          5: Image
+            ["Amber Baykuş"         , 100       , 2         , 2         , "Başlangıç"   , "img/pet/owl-barn.png"],
+            ["Kahverengi Baykuş"    , 200       , 3         , 3         , "Başlangıç"   , "img/pet/owl-brown.png"],
+            ["Tizses Baykuş"        , 300       , 4         , 4         , "Başlangıç"   , "img/pet/owl-screech.png"],
+            ["Kar Beyazı Baykuş"    , 400       , 5         , 5         , "Başlangıç"   , "img/pet/owl-snowy.png"],
+            ["Esmer Baykuş"         , 500       , 6         , 6         , "Başlangıç"   , "img/pet/owl-tawny.png"],
+            ["Yaygın Kurbağa"       , 100       , 2         , 2         , "Başlangıç"   , "img/pet/toad-common.png"],
+            ["Üç Parmaklı Kurbağa"  , 200       , 3         , 3         , "Başlangıç"   , "img/pet/toad-three-toed.png"],
+            ["Rengarenk Kurbağa"    , 300       , 4         , 4         , "Başlangıç"   , "img/pet/toad-natterjack.png"],
+            ["Kara Kurbağa"         , 400       , 5         , 5         , "Başlangıç"   , "img/pet/toad-harlequin.png"],
+            ["Ejderha Kurbağa"      , 500       , 6         , 6         , "Başlangıç"   , "img/pet/toad-dragon.png"],
+            ["Siyah Kedi"           , 100       , 2         , 2         , "Başlangıç"   , "img/pet/cat-black.png"],
+            ["Kızıl Kedi"           , 200       , 3         , 3         , "Başlangıç"   , "img/pet/cat-ginger.png"],
+            ["Siyam Kedi"           , 300       , 4         , 4         , "Başlangıç"   , "img/pet/cat-siamese.png"],
+            ["Tekir Kedi"           , 400       , 5         , 5         , "Başlangıç"   , "img/pet/cat-tabby.png"],
+            ["Beyaz Kedi"           , 500       , 6         , 6         , "Başlangıç"   , "img/pet/cat-white.png"],
         ];
         foreach ($pets as $pet) {
             Item::create([
@@ -49,6 +62,7 @@ class ItemSeeder extends Seeder
                 'attack_power'      => $pet[2],
                 'defence_power'     => $pet[3],
                 'price'             => $pet[1],
+                'image'             => $pet[5],
             ]);
         }
         /* Pelerinler | Gowns */
