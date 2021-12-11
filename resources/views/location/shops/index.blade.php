@@ -1,4 +1,4 @@
-@extends('layouts.default')
+@extends('layouts.auth-homepage')
 
 @section('title', $location->name)
 
@@ -9,7 +9,6 @@
 @section('content')
     <div class="container shop">
         <div class="row">
-            @include('components.auth-check')
             @isset (Auth::user()->character->user_id)
                 @include('components.breadcrumbs.shop-breadcrumb')
                 <div class="col-md-12">

@@ -1,4 +1,4 @@
-@extends('layouts.default')
+@extends('layouts.auth-homepage')
 
 @section('title', $location->name)
 
@@ -9,7 +9,6 @@
 @section('content')
     <div class="container location">
         <div class="row">
-            @include('components.auth-check')
             @isset (Auth::user()->character->user_id)
                 @if(Auth::user()->character->status == "Aktif")
                     @include('components.breadcrumbs.location-breadcrumb')

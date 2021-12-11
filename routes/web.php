@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CharacterController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\LocationController;
+use App\Http\Controllers\PeriodController;
 
 Route::get('/', [HomepageController::class, 'index'])->name('get-homepage');
 

@@ -21,42 +21,15 @@ class LocationController extends Controller
         $location                       = Location::find($id);
         $all_locations                  = Location::all();
         $all_periods                    = PeriodCup::all();
-        
-        if ($location['title_id'] != null) {
-            $location_title_check = true; // Mekanda unvan var
-        } else {
-            $location_title_check = false; // Mekanda unvan yok
-        }
-        foreach ($character_titles as $character_title) {
-            if ($location_title_check == true) {
-                if ($location['title_id'] == $character_title->title_id) {
-                    $cltc = 1; // Karakter unvanı mekanınkine uygun
-                    break;
-                } else {
-                    $cltc = 2; // Karakter unvanı mekanınkine uygun değil
-                    $required_title = $location->title->name;
-                    $required_title_description = $location->title->description;
-                }
-            } else {
-                $cltc = 3; // Mekan unvan istemiyor
-            }
-        }
+        $user                           = Auth::user();
         return view('location.index', [
             'id'                                => $id,
             'location'                          => $location,
-            'all_notifications'                 => $all_notifications,
+            'sub_locations'                     => $all_locations,
             'all_locations'                     => $all_locations,
-            'locations'                         => $locations,
+            'locations'                         => $all_locations,
             'all_periods'                       => $all_periods,
-            'npc_characters'                    => $npc_characters,
-            'character_titles'                  => $character_titles,
-            'all_character_role_plays'          => $all_character_role_plays,
-            'all_role_plays'                    => $all_role_plays,
-            'all_adventure_drops'               => $all_adventure_drops,
-            'all_titles'                        => $all_titles,
-            'cltc'                              => $cltc,
-            'required_title'                    => $required_title,
-            'required_title_description'        => $required_title_description,
+            'user'                              => $user,
         ]);
     }
     // Dükkan Bilgileri
@@ -89,26 +62,16 @@ class LocationController extends Controller
         return view('location.shops.index', [
             'id'                        => $id,
             'location'                  => $location,
-            'all_notifications'         => $all_notifications,
             'wands'                     => $wands,
             'gowns'                     => $gowns,
             'brooms'                    => $brooms,
             'pets'                      => $pets,
-            'materials'                 => $materials,
-            'quills'                    => $quills,
-            'potions'                   => $potions,
             'books'                     => $books,
-            'inn_markets'               => $inn_markets,
-            'train_stations'            => $train_stations,
-            'all_character_role_plays'  => $all_character_role_plays,
             'character_lessons'         => $character_lessons,
             'locations'                 => $locations,
             'all_periods'               => $all_periods,
-            'character_materials'       => $character_materials,
             'character_items'           => $character_items,
             'character_books'           => $character_books,
-            'tiers'                     => $tiers,
-            'all_role_plays'            => $all_role_plays,
         ]);
     }
     public function passwordCheck(Request $request) {
