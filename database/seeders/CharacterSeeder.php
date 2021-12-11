@@ -17,8 +17,8 @@ class CharacterSeeder extends Seeder
         $character->school_grade_id = 1;
         $character->preffered_core = 1;
         $character->wand_id = 1;
-        $character->gown_id = 24;
-        $character->broom_id = 60;
+        $character->gown_id = 36;
+        $character->broom_id = 76;
         $character->pet_id = 21;
         $character->status = "Aktif";
         $character->save();

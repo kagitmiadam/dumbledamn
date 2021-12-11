@@ -10,7 +10,7 @@ class CoreSeeder extends Seeder
     public function run()
     {
         $cores = [
-            // 0                            1       2       3       4       5
+            // 0                            1       2       3       4      5
             ["Snallygaster", "Yüreği Teli"  , 12    , 7     , 4    , 300   , "Başlangıç"],
             ["Jackalope", "Boynuzu"         , 10    , 10    , 3    , 200   , "Başlangıç"],
             ["Basilisk", "Boynuzu"          , 7     , 12    , 4    , 300   , "Başlangıç"],

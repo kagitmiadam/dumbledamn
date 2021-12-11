@@ -32,12 +32,18 @@
                 <div class="equipment-menu">
                     <p class="title">Ekipman Bilgileri</p>
                     <div class="equipped-equipment">
-                        <div class="item wand dd-tooltip" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{$user->character->wand->name}}"></div>
-                        <div class="item gown dd-tooltip" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{$user->character->gown->name}}"></div>
+                        <div class="item wand dd-tooltip" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{$user->character->wand->name}}">
+                            <img src="{{$user->character->wand->image}}" alt="">
+                        </div>
+                        <div class="item gown dd-tooltip" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{$user->character->gown->name}}">
+                            <img src="{{$user->character->gown->image}}" alt="">
+                        </div>
                         <div class="item pet dd-tooltip" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{$user->character->pet->name}}">
                             <img src="{{$user->character->pet->image}}" alt="">
                         </div>
-                        <div class="item broom dd-tooltip" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{$user->character->broom->name}}"></div>
+                        <div class="item broom dd-tooltip" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{$user->character->broom->name}}">
+                            <img src="{{$user->character->broom->image}}" alt="">
+                        </div>
                     </div>
                     <div class="new-equipment">
                         <div><a href="#" class="btn-{{$user->character->school_class->color}}">Envanteri görüntüle</a></div>

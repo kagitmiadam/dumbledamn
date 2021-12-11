@@ -28,7 +28,7 @@ class ItemSeeder extends Seeder
                     'defence_power' => $core_name->defence_power + $wood_name->defence_power,
                     'based_count'   => 1,
                     'price'         => $core_name->price + $wood_name->price,
-                    'image'         => $core_name->price + $wood_name->price
+                    'image'         => "img/wand/".$core_name->id.".png",
                 ]);
             }
         }
@@ -67,16 +67,17 @@ class ItemSeeder extends Seeder
         }
         /* Pelerinler | Gowns */
         $gowns = [
-            // 0: İsim          1:Fiyat     2: Attack   3: Defence  4: Tür
-            ["Gryffindor"       , 25        , 0         , 1         , "Başlangıç"],
-            ["Ravenclaw"        , 25        , 0         , 1         , "Başlangıç"],
-            ["Slytherin"        , 25        , 0         , 1         , "Başlangıç"],
-            ["Hufflepuff"       , 25        , 0         , 1         , "Başlangıç"],
-            ["Mezun"            , 50        , 2         , 3         , "Orta"],
-            ["Profesör"         , 100       , 4         , 5         , "Orta"],
-            ["Seherbaz"         , 200       , 6         , 7         , "Üst"],
-            ["Sihir Bakanlığı"  , 500       , 8         , 9         , "Üst"],
-            ["Sihir Bakanı"     , 750       , 10        , 10        , "Üst"],
+            // 0: İsim          1:Fiyat     2: Attack   3: Defence  4: Tür          5: Image
+            ["Gryffindor"       , 25        , 0         , 1         , "Başlangıç"   , "img/gown/1.png"],
+            ["Ravenclaw"        , 25        , 0         , 1         , "Başlangıç"   , "img/gown/2.png"],
+            ["Slytherin"        , 25        , 0         , 1         , "Başlangıç"   , "img/gown/3.png"],
+            ["Hufflepuff"       , 25        , 0         , 1         , "Başlangıç"   , "img/gown/4.png"],
+            ["Mezun"            , 50        , 2         , 3         , "Orta"        , "img/gown/5.png"],
+            ["Profesör"         , 100       , 4         , 5         , "Orta"        , "img/gown/6.png"],
+            ["Seherbaz"         , 200       , 6         , 7         , "Üst"         , "img/gown/7.png"],
+            ["Sihir Bakanlığı"  , 500       , 8         , 9         , "Üst"         , "img/gown/8.png"],
+            ["Sihir Bakanı"     , 750       , 10        , 10        , "Üst"         , "img/gown/9.png"],
+            ["Ruh Emici"        , 1000      , 15        , 15        , "Üst"         , "img/gown/10.png"],
         ];
         foreach ($gowns as $gown) {
             foreach ($core_names as $core_name) {
@@ -91,22 +92,21 @@ class ItemSeeder extends Seeder
                     'attack_power'      => ($gown[2] + $core_name->attack_power),
                     'defence_power'     => ($gown[3] + $core_name->defence_power),
                     'based_count'       => 1,
+                    'image'             => $gown[5],
                 ]);
             }
         }
         
         /* Süpürgeler | Brooms */
         $brooms = [
-            // 0: İsim          1: Fiyat    2: Speed    3: Tür
-            ["Silsüpür 11"      , 100       , 6         , "Başlangıç"],
-            ["Comet 260"        , 150       , 8         , "Başlangıç"],
-            ["Comet 290"        , 200       , 9         , "Başlangıç"],
-            ["Ateşoku"          , 250       , 10        , "Başlangıç"],
-            ["Ateşoku Supreme"  , 350       , 12        , "Başlangıç"],
-            ["Aydüzeltici"      , 300       , 13        , "Başlangıç"],
-            ["Yıldırımoku VII"  , 400       , 15        , "Başlangıç"],
-            ["Nimbus 2000"      , 350       , 16        , "Başlangıç"],
-            ["Nimbus 2001"      , 400       , 18        , "Başlangıç"],
+            // 0: İsim          1: Fiyat    2: Speed    3: Tür          4: Image
+            ["Silsüpür 11"      , 100       , 6         , "Başlangıç"   , "img/broom/1.png"],
+            ["Comet 260"        , 150       , 8         , "Başlangıç"   , "img/broom/2.png"],
+            ["Ateşoku"          , 250       , 10        , "Başlangıç"   , "img/broom/3.png"],
+            ["Ateşoku Supreme"  , 350       , 12        , "Başlangıç"   , "img/broom/4.png"],
+            ["Aydüzeltici"      , 300       , 13        , "Başlangıç"   , "img/broom/5.png"],
+            ["Yıldırımoku VII"  , 400       , 15        , "Başlangıç"   , "img/broom/6.png"],
+            ["Nimbus 2001"      , 400       , 18        , "Başlangıç"   , "img/broom/7.png"],
         ];
         foreach ($brooms as $broom) {
             foreach ($core_names as $core_name) {
@@ -120,6 +120,7 @@ class ItemSeeder extends Seeder
                     'price'             => ($broom[1] + $core_name->price),
                     'speed_power'       => ($broom[2] + $core_name->speed_power),
                     'based_count'       => 1,
+                    'image'             => $broom[4],
                 ]);
             }
         }
