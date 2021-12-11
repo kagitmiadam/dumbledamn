@@ -1,0 +1,33 @@
+@if ($location->location_type->name === "Asa Dükkanı")
+    @include('location.location-type.wands')
+@elseif ($location->location_type->name === "Banka")
+    @include('location.location-type.bank')
+@elseif ($location->location_type->name === "Cüppe Dükkanı")
+    @include('location.location-type.gown')
+@elseif ($location->location_type->name === "Quidditch Dükkanı")
+    @include('location.location-type.quidditch')
+@elseif ($location->location_type->name === "Evcil Hayvan Dükkanı")
+    @include('location.location-type.pet-shop')
+@elseif ($location->location_type->name === "Malzeme Dükkanı")
+    @include('location.location-type.material')
+@elseif ($location->location_type->name === "Tüy Kalem Dükkanı")
+    @include('location.location-type.quill')
+@elseif ($location->location_type->name === "İksir Dükkanı")
+    @include('location.location-type.potion')
+@elseif ($location->location_type->name === "Han")
+    @include('location.location-type.inn')
+@elseif ($location->location_type->name === "Kitap Dükkanı")
+    @include('location.location-type.bookstore')
+@elseif ($location->location_type->name === "Tren İstasyonu")
+    @include('location.location-type.train-station')
+@elseif ($location->location_type->name === "Yerleşke")
+    @include('location.location-type.campus')
+@elseif ($location->location_type->name === "Derslik")
+    @include('location.location-type.classroom')
+@elseif ($location->location_type->name === "Bölge")
+
+@elseif ($location->location_type->name === "Okul")
+
+@else
+    <div class="alert warning">Yeni eklenecek</div>
+@endif
