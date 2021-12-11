@@ -190,8 +190,8 @@
                         }
                         button {
                             background: transparent;
-                            border: 1px solid #212121;
-                            padding: 10px;
+                            border: 1px solid #212121 !important;
+                            padding: 5px 10px !important;
                             border-radius: 10px;
                             transition: .45s;
                             cursor: pointer;

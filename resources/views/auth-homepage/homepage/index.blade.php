@@ -7,15 +7,12 @@
 
 @section('content')
 <div id="auth-homepage" class="wrapper">
-    Anasayfa
-    <div class="logout-field">
-        <p>
-            Hoş geldin, <span>{{$user->name}}</span>
-        </p>
-        <p>
-            Okul: {{$user->character->school->name}}
-            Sınıf: {{$user->character->school_class->name}}
-        </p>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                test
+            </div>
+        </div>
     </div>
 </div>
 @stop

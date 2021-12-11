@@ -22,4 +22,24 @@ class Character extends Model
     public function school_class() {
         return $this->belongsTo(SchoolClass::class);
     }
+
+    public function school_grade() {
+        return $this->belongsTo(SchoolGrade::class);
+    }
+
+    public function wand() {
+        return $this->belongsTo(Item::class);
+    }
+
+    public function gown() {
+        return $this->belongsTo(Item::class);
+    }
+
+    public function broom() {
+        return $this->belongsTo(Item::class);
+    }
+
+    public function pet() {
+        return $this->belongsTo(Item::class);
+    }
 }

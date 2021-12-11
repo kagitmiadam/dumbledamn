@@ -7,7 +7,7 @@ $(document).ready(function () {
     });
     $('.equipment-field .equipment-icon').on('click', function(){
         $(this).toggleClass('active');
-        $('.equipment-field').addClass('active');
+        $('.equipment-field').toggleClass('active');
         $('.equipment-menu').toggleClass('active');
         $('.bg-black-container').toggleClass('active');
     });
@@ -21,7 +21,6 @@ $(document).ready(function () {
         $('.bg-black-container').removeClass('active');
     });
     $('.sub-menu-field').on('click', function(){
-        $('.sub-menu-field').removeClass('active');
         $(this).toggleClass('active');
     });
     $('.dd-tooltip').tooltip();

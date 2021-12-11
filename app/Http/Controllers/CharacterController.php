@@ -8,6 +8,8 @@ use App\Models\Character;
 use App\Models\Gender;
 use App\Models\School;
 use App\Models\SchoolClass;
+use App\Models\Location;
+use App\Models\LocationType;
 
 class CharacterController extends Controller
 {
@@ -30,6 +32,7 @@ class CharacterController extends Controller
         else if ($request->school_class_id == "hufflepuff") {$request->school_class_id=3;}
         else if ($request->school_class_id == "ravenclaw") {$request->school_class_id=4;}
         $character->school_class_id = $request->school_class_id;
+        $character->school_grade_id = 1;
         $character->save();
 
         return redirect()->route('get-select-wand')->with('success', 'Bina seçimi!');
@@ -64,12 +67,16 @@ class CharacterController extends Controller
         $gender                         = Gender::all();
         $school                         = School::all();
         $school_class                   = SchoolClass::all();
+        $locations                      = Location::all();
+        $sub_locations                  = Location::all();
         return view('auth-homepage.homepage.index', [
             'user'                      => $user,
             'character'                 => $character,
             'gender'                    => $gender,
             'school'                    => $school,
             'school_class'              => $school_class,
+            'locations'                 => $locations,
+            'sub_locations'             => $sub_locations,
         ]);
     }
 }

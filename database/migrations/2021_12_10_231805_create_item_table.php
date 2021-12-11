@@ -22,6 +22,7 @@ class CreateItemTable extends Migration
             $table->integer('speed_power')->nullable();
             $table->integer('price');
             $table->float('discount')->default(0);
+            $table->string('image')->default();
             $table->integer('based_count')->default(1000);
             $table->integer('status')->default(1);
             $table->timestamps();
