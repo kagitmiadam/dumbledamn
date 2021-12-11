@@ -6,6 +6,11 @@
 @stop
 
 @section('content')
+@foreach($errors->all() as $error)
+<div>
+    <span class="error-message">{{$error}}</span>
+</div>
+@endforeach
 <div id="homepage">
     <div class="background-image-field">
         <div class="bg-1">
