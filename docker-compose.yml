@@ -44,6 +44,20 @@ services:
     networks:
       - dumbledamn
 
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: pma
+    links:
+      - db
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+    restart: always
+    ports:
+      - 8081:80
+
+
 networks:
   dumbledamn:
     driver: bridge

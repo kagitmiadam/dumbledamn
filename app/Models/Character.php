@@ -42,4 +42,10 @@ class Character extends Model
     public function pet() {
         return $this->belongsTo(Item::class);
     }
+    public function character_spell() {
+        return $this->hasMany(CharacterSpell::class);
+    }
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
 }

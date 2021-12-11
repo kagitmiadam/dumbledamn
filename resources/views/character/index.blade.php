@@ -95,9 +95,9 @@
                                                 <p>Ustalık kazanılan büyü sayısı: {{ $full_predisposition }}</p>
                                             @endif
                                             {{-- {{ route('get-spell') }} --}}
-                                            <a class="{{$user->character->school_class->color}}-color" href="#">
-                                                Tüm büyüleri görüntüle
-                                            </a>
+                                            <div class="character-new-equipment">
+                                                <div><a href="#" class="btn-{{$user->character->school_class->color}}">Tüm büyüleri görüntüle</a></div>
+                                            </div>
                                         @else
                                         {{-- {{ route('get-spell') }} --}}
                                         <span>Şuan hiç bir büyü bilmiyorsunuz. <a href="" class="{{$user->character->school_class->color}}-color">Mevcut büyü listesini</a> inceleyebilir, derslere katılarak yeni büyüler öğrenmeye başlayabilirsiniz!</span>

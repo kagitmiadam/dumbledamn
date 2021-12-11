@@ -10,6 +10,7 @@ use App\Models\School;
 use App\Models\SchoolClass;
 use App\Models\Location;
 use App\Models\LocationType;
+use App\Models\Spell;
 
 class CharacterController extends Controller
 {
@@ -62,13 +63,14 @@ class CharacterController extends Controller
         return redirect()->route('get-auth-homepage')->with('success', 'Herşey tamam!');
     }
     public function homepage() {
-        $user = Auth::user();
-        $character = $user->id;
+        $user                           = Auth::user();
+        $character                      = $user->id;
         $gender                         = Gender::all();
         $school                         = School::all();
         $school_class                   = SchoolClass::all();
         $locations                      = Location::all();
         $sub_locations                  = Location::all();
+        $spells                         = Spell::all();
         return view('auth-homepage.homepage.index', [
             'user'                      => $user,
             'character'                 => $character,
@@ -77,6 +79,27 @@ class CharacterController extends Controller
             'school_class'              => $school_class,
             'locations'                 => $locations,
             'sub_locations'             => $sub_locations,
+            'spells'                    => $spells,
+        ]);
+    }
+    public function character() {
+        $user                           = Auth::user();
+        $character                      = $user->id;
+        $gender                         = Gender::all();
+        $school                         = School::all();
+        $school_class                   = SchoolClass::all();
+        $locations                      = Location::all();
+        $sub_locations                  = Location::all();
+        $spells                         = Spell::all();
+        return view('character.index', [
+            'user'                      => $user,
+            'character'                 => $character,
+            'gender'                    => $gender,
+            'school'                    => $school,
+            'school_class'              => $school_class,
+            'locations'                 => $locations,
+            'sub_locations'             => $sub_locations,
+            'spells'                    => $spells,
         ]);
     }
 }

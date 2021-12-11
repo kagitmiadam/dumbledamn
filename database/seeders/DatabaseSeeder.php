@@ -18,6 +18,12 @@ class DatabaseSeeder extends Seeder
         $this->call(ItemSeeder::class);
         $this->call(LocationTypeSeeder::class);
         $this->call(LocationSeeder::class);
+        $this->call(SpellTypeSeeder::class);
+        $this->call(SpellSeeder::class);
+        $this->call(SpellLevelSeeder::class);
+        $this->call(PeriodCupSeeder::class);
         $this->call(CharacterSeeder::class);
+        $this->call(PeriodCupDetailSeeder::class);
+        $this->call(CharacterSpellSeeder::class);
     }
 }
