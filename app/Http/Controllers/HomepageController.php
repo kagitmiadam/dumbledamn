@@ -9,4 +9,9 @@ class HomepageController extends Controller
     public function index() {
         return view('homepage.index');
     }
+
+    public function dashboard()
+    {
+        return view('auth-homepage.homepage.index');
+    }
 }
