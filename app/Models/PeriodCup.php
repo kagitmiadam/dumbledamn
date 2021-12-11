@@ -4,12 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use SchoolClass;
 
 class PeriodCup extends Model
 {
-    use HasFactory;
-
     protected $guarded = [];
 
     protected $table = "period_cup";
@@ -30,11 +27,11 @@ class PeriodCup extends Model
         return $this->belongsTo(SchoolClass::class, 'class_id_4');
     }
 
-    public function Classes(){
-        return $this->belongsTo(SchoolClass::class, 'id');
+    public function classes(){
+        return $this->belongsTo(SchoolGrade::class, 'id');
     }
 
-    public function School(){
+    public function school(){
         return $this->belongsTo(School::class, 'school_id');
     }
 }

@@ -15,7 +15,7 @@
         </li>
         <li class="menu">
             <a href="#" class="menu-link">
-                <span>Bina: <img src="{{$user->character->school_class->image}}" alt="" class="img-right"></span>
+                <span>Bina: <img src="{{asset($user->character->school_class->image)}}" alt="" class="img-right"></span>
             </a>
         </li>
         <li class="menu">
@@ -24,7 +24,7 @@
             </a>
         </li>
         <li class="menu">
-            <a href="#" class="menu-link">
+            <a href="{{route('get-character')}}" class="menu-link">
                 <span>
                     <img src="{{asset('img/icon/cloak.png')}}" alt="" class="invert">
                 </span>
@@ -39,7 +39,7 @@
                     <a href="#" class="menu-link">
                         @if($location->image != "")
                         <span>
-                            <img src="{{$location->icon}}" alt="" class="invert">
+                            <img src="{{asset($location->icon)}}" alt="" class="invert">
                         </span>
                         @endif
                         <span>

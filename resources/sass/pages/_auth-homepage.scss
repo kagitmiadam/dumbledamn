@@ -1,3 +1,72 @@
 #auth-homepage {
+    .character-equipment {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px 0;
+        .equipment-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .title {
+                font-size: 12px;
+                margin-bottom: 10px;
+            }
+        }
+        .item {
+            width: 50px;
+            height: 50px;
+            border: 1px solid #bdc1c6;
+            border-radius: 3px;
+            transition: .45s;
+            background: #212121;
+            &:hover {
+                background: lighten(#212121, 20%);
+            }
+            img {
+                object-fit: contain;
+                width: 100%;
+                height: 100%;
+                padding: 5px;
+            }
+        }
+    }
     
+    .character-new-equipment {
+        margin: 10px 0;
+        display: flex;
+        div {
+            margin: 10px 0;
+            margin-right: 10px;
+            &:last-child {
+                margin-right: 0;
+            }
+            a {
+                padding: 5px 10px;
+                border-radius: 3px;
+                display: flex;
+                justify-content: center;
+                &:hover {
+                    color: #fff;
+                }
+            }
+        }
+    }
+    .spell-field {
+        .spell-box {
+            display: flex;
+            min-height: 84px;
+        }
+        .character-spell {
+            margin-top: 24px;
+        }
+        .spell-info {
+            margin-right: 10px;
+            margin-bottom: 10px;
+            height: 50px;
+            img {
+                width: 50px;
+                height: 50px;
+            }
+        }
+    }
 }

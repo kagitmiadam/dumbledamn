@@ -14,5 +14,16 @@ Route::post('/select-wand/submit', [CharacterController::class, 'submitSelectWan
 
 Route::get('/homepage', [CharacterController::class, 'homepage'])->name('get-auth-homepage')->middleware('auth:web');
 Route::get('/location/{id}', [LocationController::class, 'getLocation'])->name('get-location');
+Route::get('/character', [CharacterController::class, 'character'])->name('get-character')->middleware('auth');
+
+// Dönem Kupası
+// Mevcut Dönem Bilgileri
+Route::get('/period', [PeriodController::class, 'currentPeriod'])->name('get-current-period')->middleware('auth');
+// Tüm Geçmiş Dönem Bilgileri
+Route::get('/period/past', [PeriodController::class, 'pastPeriodInfo'])->name('get-past-period-info')->middleware('auth');
+// Geçmiş Dönem Kupası Detayları
+Route::get('/period/detail/{id}', [PeriodController::class, 'periodDetailInfo'])->name('get-period-detail-info')->middleware('auth');
+// Tüm Dönem Kupalarının Toplam Detayları
+Route::get('/period/all', [PeriodController::class, 'periodAllInfo'])->name('get-period-all-info')->middleware('auth');
 
 require __DIR__.'/auth.php';

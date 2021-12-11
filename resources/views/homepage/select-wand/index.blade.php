@@ -89,18 +89,18 @@ $(document).ready(function () {
     golCanavariAnswer: 2,
   }, {
     question: "Peki ya göz renginiz?",
-    choices: ["Mavi", "Mavi/Gri", "Yeşil", "Ela", "Diğer"],
+    choices: ["Mavi", "Yeşil", "Ela", "Diğer"],
     snallygasterAnswer: 3,
     jackalopeAnswer: 1,
     basiliskAnswer: 0,
     golCanavariAnswer: 2,
   }, {
     question: "Doğum tarihiniz tek rakam mı, yoksa çift rakam mı?",
-    choices: ["Tek", "Çift"],
+    choices: ["1-10", "11-15", "16-20", "21-31"],
     snallygasterAnswer: 0,
-    jackalopeAnswer: 0,
-    basiliskAnswer: 1,
-    golCanavariAnswer: 1,
+    jackalopeAnswer: 1,
+    basiliskAnswer: 2,
+    golCanavariAnswer: 3,
   }, {
     question: "Kendinle ilgili en çok gurur duyduğun şey nedir?",
     choices: ["Hayal Gücü", "Dayanıklılık", "Zeka", "İyimserlik"],

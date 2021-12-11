@@ -1,18 +1,18 @@
 // primary-color
-.dumbledamn-primary {color         : var(--primary-color);}
-.dumbledamn-primary-dark {color    : var(--primary-color-dark)}
-.dumbledamn-primary-light {color   : var(--primary-color-light)}
-.dumbledamn-primary-text {color    : var(--primary-color-text)}
+.dumbledamn-primary {color         : $primary-color;}
+.dumbledamn-primary-dark {color    : $primary-color-dark;}
+.dumbledamn-primary-light {color   : $primary-color-light;}
+.dumbledamn-primary-text {color    : $primary-color-text;}
 // secondary-color
-.dumbledamn-secondary {color       : var(--secondary-color)}
-.dumbledamn-secondary-dark {color  : var(--secondary-color-dark)}
-.dumbledamn-secondary-light {color : var(--secondary-color-light)}
-.dumbledamn-secondary-text {color  : var(--secondary-color-text)}
+.dumbledamn-secondary {color       : $secondary-color;}
+.dumbledamn-secondary-dark {color  : $secondary-color-dark;}
+.dumbledamn-secondary-light {color : $secondary-color-light;}
+.dumbledamn-secondary-text {color  : $secondary-color-text;}
 // third-color
-.dumbledamn-third {color           : var(--third-color)}
-.dumbledamn-third-dark {color      : var(--third-color-dark)}
-.dumbledamn-third-light {color     : var(--third-color-light)}
-.dumbledamn-third-text {color      : var(--third-color-text)}
+.dumbledamn-third {color           : $third-color;}
+.dumbledamn-third-dark {color      : $third-color-dark;}
+.dumbledamn-third-light {color     : $third-color-light;}
+.dumbledamn-third-text {color      : $third-color-text;}
 // gray-color
 .dumbledamn-gray {color            :$gray-color;}
 .dumbledamn-gray-dark {color       :$gray-color-dark;}
@@ -39,25 +39,55 @@
 .dumbledamn-blue-light {color      :$blue-color-light;}
 .dumbledamn-blue-text {color       :$blue-color-text;}
 // gryffindor-color
-.gryffindor-color {color      :$gryffindor-color;}
-.gryffindor-color-dark {color :$gryffindor-color-dark;}
-.gryffindor-color-light {color:$gryffindor-color-light;}
-.gryffindor-color-text {color :$gryffindor-color-text;}
+.gryffindor-color                   {color :$gryffindor-color;}
+.gryffindor-color-dark              {color :$gryffindor-color-dark;}
+.gryffindor-color-light             {color :$gryffindor-color-light;}
+.gryffindor-color-text              {color :$gryffindor-color-text;}
 // slytherin-color
-.slytherin-color {color       :$slytherin-color;}
-.slytherin-color-dark {color  :$slytherin-color-dark;}
-.slytherin-color-light {color :$slytherin-color-light;}
-.slytherin-color-text {color  :$slytherin-color-text;}
+.slytherin-color                    {color :$slytherin-color;}
+.slytherin-color-dark               {color :$slytherin-color-dark;}
+.slytherin-color-light              {color :$slytherin-color-light;}
+.slytherin-color-text               {color :$slytherin-color-text;}
 // ravenclaw-color
-.ravenclaw-color {color       :$ravenclaw-color;}
-.ravenclaw-color-dark {color  :$ravenclaw-color-dark;}
-.ravenclaw-color-light {color :$ravenclaw-color-light;}
-.ravenclaw-color-text {color  :$ravenclaw-color-text;}
+.ravenclaw-color                    {color :$ravenclaw-color;}
+.ravenclaw-color-dark               {color :$ravenclaw-color-dark;}
+.ravenclaw-color-light              {color :$ravenclaw-color-light;}
+.ravenclaw-color-text               {color :$ravenclaw-color-text;}
 // hufflepuff-color
-.hufflepuff-color {color      :$hufflepuff-color;}
-.hufflepuff-color-dark {color :$hufflepuff-color-dark;}
-.hufflepuff-color-light {color:$hufflepuff-color-light;}
-.hufflepuff-color-text {color :$hufflepuff-color-text;}
+.hufflepuff-color                   {color :$hufflepuff-color;}
+.hufflepuff-color-dark              {color :$hufflepuff-color-dark;}
+.hufflepuff-color-light             {color :$hufflepuff-color-light;}
+.hufflepuff-color-text              {color :$hufflepuff-color-text;}
+// gryffindor-color-link
+.gryffindor-color-link              {color :$gryffindor-color;&:hover {color:$gryffindor-color;}}
+.gryffindor-color-link-dark         {color :$gryffindor-color-dark;&:hover {color:$gryffindor-color-dark;}}
+.gryffindor-color-link-light        {color :$gryffindor-color-light;&:hover {color:$gryffindor-color-light;}}
+.gryffindor-color-link-text         {color :$gryffindor-color-text;&:hover {color:$gryffindor-color-text;}}
+// slytherin-color-link
+.slytherin-color-link               {color :$slytherin-color;&:hover {color:$slytherin-color;}}
+.slytherin-color-link-dark          {color :$slytherin-color-dark;&:hover {color:$slytherin-color-dark;}}
+.slytherin-color-link-light         {color :$slytherin-color-light;&:hover {color:$slytherin-color-light;}}
+.slytherin-color-link-text          {color :$slytherin-color-text;&:hover {color:$slytherin-color-text;}}
+// ravenclaw-color-link
+.ravenclaw-color-link               {color :$ravenclaw-color;&:hover {color:$ravenclaw-color;}}
+.ravenclaw-color-link-dark          {color :$ravenclaw-color-dark;&:hover {color:$ravenclaw-color-dark;}}
+.ravenclaw-color-link-light         {color :$ravenclaw-color-light;&:hover {color:$ravenclaw-color-light;}}
+.ravenclaw-color-link-text          {color :$ravenclaw-color-text;&:hover {color:$ravenclaw-color-text;}}
+// hufflepuff-color-link
+.hufflepuff-color-link              {color :$hufflepuff-color;&:hover {color:$hufflepuff-color;}}
+.hufflepuff-color-link-dark         {color :$hufflepuff-color-dark;&:hover {color:$hufflepuff-color-dark;}}
+.hufflepuff-color-link-light        {color :$hufflepuff-color-light;&:hover {color:$hufflepuff-color-light;}}
+.hufflepuff-color-link-text         {color :$hufflepuff-color-text;&:hover {color:$hufflepuff-color-text;}}
+
+
+// gryffindor-color-link-white
+.gryffindor-color-link-white        {color: #fff;&:hover {color: #fff;}}
+// slytherin-color-link-white   
+.slytherin-color-link-white         {color: #fff;&:hover {color: #fff;}}
+// ravenclaw-color-link-white   
+.ravenclaw-color-link-white         {color: #fff;&:hover {color: #fff;}}
+// hufflepuff-color-link-white  
+.hufflepuff-color-link-white        {color: #fff;&:hover {color: #fff;}}
 // social-media-color
 .dumbledamn-facebook{color         :$facebook-color;}
 .dumbledamn-twitter{color          :$twitter-color;}
