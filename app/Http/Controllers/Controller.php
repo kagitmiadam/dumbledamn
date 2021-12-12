@@ -7,10 +7,13 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use App\Models\CharacterLesson;
+use App\Models\School;
+use App\Models\PeriodCup;
 
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
     public function __construct () {
         $character_lessons = CharacterLesson::all();
         view()->share('character_lessons', $character_lessons);
