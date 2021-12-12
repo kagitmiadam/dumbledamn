@@ -4,7 +4,6 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Artisan;
-use Auth;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -25,8 +24,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if(Auth::check()) {
-            Artisan::call("period:check");
-        }
+
     }
 }
