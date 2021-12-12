@@ -80,7 +80,7 @@
                 </div>
                 <div class="col-md-12">
                     <p>
-                        Alacak olduğunuz {{ $item->short_name }} {{ $item_name1 }} envanterinize gidecektir. Kuşanmak için <a href="{{ route('get-item') }}" class="{{$user->character->school_class->color}}-color-link-light">envanter</a> sayfanızı ziyaret etmeniz gerekmektedir.
+                        Alacak olduğunuz {{ $item->short_name }} {{ $item_name1 }} envanterinize gidecektir. Kuşanmak için <a href="{{ route('get-inventory') }}" class="{{$user->character->school_class->color}}-color-link-light">envanter</a> sayfanızı ziyaret etmeniz gerekmektedir.
                     </p>
                 </div>
             </div>

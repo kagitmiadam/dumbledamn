@@ -29,14 +29,11 @@
                 <div class="finish-quiz-field">
                   <form action="{{url('/select-wand/submit')}}" method="post">
                     @csrf
-                    {{-- <input type="hidden" name="_method" value="PUT"> --}}
-                    {{-- <input type="hidden" id="id" name="id" value="{{ $user->id }}"/> --}}
                     <input type="hidden" id="preffered_core" name="preffered_core" value=""/>
                     <input type="hidden" id="status" name="status" value="Hazır"/>
                     <button class="next-page" type="submit">Devam et</button>
                   </form>
                 </div>
-                {{-- <a href="{{ route('get-auth-homepage') }}" class="ct-nav-link">Devam Et</a> --}}
             </div>
         </div>
     </div>

@@ -17,11 +17,11 @@
         $character_item_id = "broom_id";
     }
 @endphp
-<div class="modal fade" id="wand{{ $item->id }}" tabindex="-1" aria-labelledby="wandLabel" aria-hidden="true">
+<div class="modal fade" id="broom{{ $item->id }}" tabindex="-1" aria-labelledby="broomLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="wandLabel">
+          <h5 class="modal-title" id="broomLabel">
             {{ $item->name }}
             <img src="{{asset($item->image)}}" alt="" class="icon">
           </h5>
@@ -52,50 +52,24 @@
                     </p>
                     <hr>
                 </div>
-                @if($item->type == "Asa" or $item->type == "Pelerin" or $item->type == "Evcil Hayvan")
-                <div class="col-md-6">
-                    <p class="f-16 text-center text-underline fw-bold">Saldırı Gücü Bilgileri</p>
+                <div class="col-md-12">
+                    <p class="f-16 text-underline fw-bold">Hız Bilgileri</p>
                     <p>
-                        <span class="text-underline">Mevcut Saldırı Gücü:</span>
-                        <span> {{ Auth::user()->character->attack_power }}</span>
+                        <span class="text-underline">Mevcut Hız:</span>
+                        <span> {{ Auth::user()->character->speed_power }}</span>
                     </p>
                     <p>
-                        <span class="text-underline">Seçilen {{ $item_name }} Saldırı Gücü:</span>
-                        <span> {{ $item->attack_power }}</span>
+                        <span class="text-underline">Seçilen {{ $item_name }} Hızı:</span>
+                        <span> {{ $item->speed_power }}</span>
                     </p>
-                    @include('components.modal.shop-item-modal-attack-component')
-                </div>
-                <div class="col-md-6">
-                    <p class="f-16 text-center text-underline fw-bold">Savunma Gücü Bilgileri</p>
-                    <p>
-                        <span class="text-underline">Mevcut Savunma Gücü:</span>
-                        <span> {{ Auth::user()->character->defence_power }}</span>
-                    </p>
-                    <p>
-                        <span class="text-underline">Seçilen {{ $item_name }} Savunma Gücü:</span>
-                        <span> {{ $item->defence_power }}</span>
-                    </p>
-                    @include('components.modal.shop-item-modal-defence-component')
+                    @include('components.modal.shop-item-modal-speed-component')
+                    <hr>
                 </div>
                 <div class="col-md-12">
-                    <p class="mt-1">
-                        Alacak olduğunuz {{ $item->short_name }} {{ $item_name1 }} envanterinize gidecektir. Kuşanmak için <a href="{{ route('get-item') }}" class="{{$user->character->school_class->color}}-color-link">envanter</a> sayfanızı ziyaret etmeniz gerekmektedir.
+                    <p>
+                        Alacak olduğunuz {{ $item->short_name }} {{ $item_name1 }} envanterinize gidecektir. Kuşanmak için <a href="{{ route('get-inventory') }}" class="{{$user->character->school_class->color}}-color-link-light">envanter</a> sayfanızı ziyaret etmeniz gerekmektedir.
                     </p>
                 </div>
-                @elseif($item->type == "Süpürge")
-                    <div class="col-md-12">
-                        <p class="f-16 text-center text-underline fw-bold">Hız Bilgileri</p>
-                        <p>
-                            <span class="text-underline">Mevcut Hız:</span>
-                            <span> {{ Auth::user()->character->speed_power }}</span>
-                        </p>
-                        <p>
-                            <span class="text-underline">Seçilen {{ $item_name }} Hızı:</span>
-                            <span> {{ $item->speed_power }}</span>
-                        </p>
-                        @include('components.modal.shop-item-modal-speed-component')
-                    </div>
-                @endif
             </div>
             <hr>
             @if($item_status == 1)

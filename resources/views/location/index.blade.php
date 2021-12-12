@@ -17,7 +17,7 @@
                             <h5 class="text-center">{{$location->name}}</h5>
                         </div>
                         <hr>
-                        x
+                        {{$location->description}}
                     </div>
                 </div>
             </div>

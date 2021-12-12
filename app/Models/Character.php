@@ -54,4 +54,12 @@ class Character extends Model
     public function core_preffered(){
         return $this->belongsTo(Core::class, 'preffered_core');
     }
+
+    public function character_book() {
+        return $this->hasMany(CharacterBook::class);
+    }
+    
+    public function character_inventory() {
+        return $this->hasMany(CharacterInventory::class);
+    }
 }

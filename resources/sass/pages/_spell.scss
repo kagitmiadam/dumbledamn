@@ -1,0 +1,10 @@
+.spell {
+    .spell-content {
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+    }
+    .deactive {
+        filter: grayscale(1);
+    }
+}

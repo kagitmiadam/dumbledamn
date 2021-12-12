@@ -1,21 +1,21 @@
 @if($item_name == "Süpürge")
-    @isset(Auth::user()->character->broom_id)
+    @isset($user->character->broom_id)
         <p>
-            <span class="text-underline">Mevcut {{ $item_name }} Hız:</span>
-            <span>{{ Auth::user()->character->broom->speed_power }}</span>
+            <span class="text-underline">Mevcut {{ $item_name }} Hızı:</span>
+            <span>{{ $user->character->broom->speed_power }}</span>
         </p>
-        @if($item->item->speed_power > Auth::user()->character->broom->speed_power)
+        @if($item->speed_power > $user->character->broom->speed_power)
             <p>
                 <span class="text-underline">Hız Değişimi:</span>
-                <span>+{{ $item->item->speed_power - Auth::user()->character->broom->speed_power }}</span>
+                <span>+{{ $item->speed_power - $user->character->broom->speed_power }}</span>
             </p>
             <p>
-                <span>Mevcut hız +{{ $item->item->speed_power - Auth::user()->character->broom->speed_power }} artarak {{ Auth::user()->character->speed_power + ($item->item->speed_power - Auth::user()->character->broom->speed_power) }} olacaktır.</span>
+                <span>Mevcut hız +{{ $item->speed_power - $user->character->broom->speed_power }} artarak {{ $user->character->speed_power + ($item->speed_power - $user->character->broom->speed_power) }} olacaktır.</span>
             </p>
-        @elseif($item->item->speed_power == Auth::user()->character->broom->speed_power)
+        @elseif($item->speed_power == $user->character->broom->speed_power)
             <p>
                 <span class="text-underline">Hız Değişimi:</span>
-                <span>{{ $item->item->speed_power - Auth::user()->character->broom->speed_power }}</span>
+                <span>{{ $item->speed_power - $user->character->broom->speed_power }}</span>
             </p>
             <p>
                 <span>Mevcut hız değişmeyecektir.</span>
@@ -23,10 +23,10 @@
         @else
             <p>
                 <span class="text-underline">Hız Değişimi:</span>
-                <span>{{ $item->item->speed_power - Auth::user()->character->broom->speed_power }}</span>
+                <span>{{ $item->speed_power - $user->character->broom->speed_power }}</span>
             </p>
             <p>
-                <span>Mevcut hız {{ $item->item->speed_power - Auth::user()->character->broom->speed_power }} azalarak {{ Auth::user()->character->speed_power + ($item->item->speed_power - Auth::user()->character->broom->speed_power) }} olacaktır.</span>
+                <span>Mevcut hız {{ $item->speed_power - $user->character->broom->speed_power }} azalarak {{ $user->character->speed_power + ($item->speed_power - $user->character->broom->speed_power) }} olacaktır.</span>
             </p>
         @endif
     @else
@@ -36,10 +36,10 @@
         </p>
         <p>
             <span class="text-underline">Hız Değişimi:</span>
-            <span>+{{ $item->item->speed_power }}</span>
+            <span>+{{ $item->speed_power }}</span>
         </p>
         <p>
-            <span>Mevcut hız +{{ $item->item->speed_power }} artarak {{ Auth::user()->character->speed_power + ($item->item->speed_power) }} olacaktır.</span>
+            <span>Mevcut hız +{{ $item->speed_power }} artarak {{ $user->character->speed_power + ($item->speed_power) }} olacaktır.</span>
         </p>
     @endisset
 @endif

@@ -12,6 +12,8 @@ use App\Models\Location;
 use App\Models\LocationType;
 use App\Models\Spell;
 use App\Models\CharacterInventory;
+use App\Models\CharacterBook;
+use App\Models\CharacterSpell;
 use App\Models\Lesson;
 use App\Models\CharacterLesson;
 use App\Models\PeriodCup;
@@ -149,6 +151,7 @@ class CharacterController extends Controller
         $locations                      = Location::all();
         $sub_locations                  = Location::all();
         $spells                         = Spell::all();
+        $character_lessons              = CharacterLesson::all();
         return view('auth-homepage.homepage.index', [
             'user'                      => $user,
             'character'                 => $character,
@@ -158,6 +161,7 @@ class CharacterController extends Controller
             'locations'                 => $locations,
             'sub_locations'             => $sub_locations,
             'spells'                    => $spells,
+            'character_lessons'                 => $character_lessons,
         ]);
     }
     public function character() {
@@ -169,6 +173,8 @@ class CharacterController extends Controller
         $locations                      = Location::all();
         $sub_locations                  = Location::all();
         $spells                         = Spell::all();
+        $character_books                = CharacterBook::all();
+        $character_items                = CharacterInventory::all();
         return view('character.index', [
             'user'                      => $user,
             'character'                 => $character,
@@ -178,21 +184,63 @@ class CharacterController extends Controller
             'locations'                 => $locations,
             'sub_locations'             => $sub_locations,
             'spells'                    => $spells,
+            'character_books'           => $character_books,
+            'character_items'           => $character_items,
         ]);
     }
-    public function characterItem() {
-        $user                       = Auth::user();
-        $character                  = $user->id;
-        $character_items            = CharacterInventory::where('character_id', $user->id)
-                                                        ->paginate(10);
-        $character_lessons          = CharacterLesson::all();
-        $all_lessons                = Lesson::all();
-        $locations                  = Location::all();
-        $all_periods                = PeriodCup::all();
-        return view('character.item', [
+    public function characterInventory() {
+        $user                           = Auth::user();
+        $character                      = $user->id;
+        $character_items                = CharacterInventory::where('character_id', $user->id)->get();
+        $character_lessons              = CharacterLesson::all();
+        $all_lessons                    = Lesson::all();
+        $locations                      = Location::all();
+        $all_periods                    = PeriodCup::all();
+        return view('character.inventory-item', [
             'user'                      => $user,
             'character'                 => $character,
             'character_items'           => $character_items,
+            'character_lessons'         => $character_lessons,
+            'all_lessons'               => $all_lessons,
+            'locations'                 => $locations,
+            'sub_locations'             => $locations,
+            'all_periods'               => $all_periods,
+            'all_periods'               => $all_periods,
+        ]);
+    }
+    public function characterBookInventory() {
+        $user                           = Auth::user();
+        $character                      = $user->id;
+        $character_books                = CharacterBook::where('character_id', $user->id)->get();
+        $character_lessons              = CharacterLesson::all();
+        $all_lessons                    = Lesson::all();
+        $locations                      = Location::all();
+        $all_periods                    = PeriodCup::all();
+        return view('character.inventory-book', [
+            'user'                      => $user,
+            'character'                 => $character,
+            'character_books'           => $character_books,
+            'character_lessons'         => $character_lessons,
+            'all_lessons'               => $all_lessons,
+            'locations'                 => $locations,
+            'sub_locations'             => $locations,
+            'all_periods'               => $all_periods,
+        ]);
+    }
+    public function characterSpell() {
+        $user                           = Auth::user();
+        $character                      = $user->id;
+        $character_spells               = CharacterSpell::where('character_id', $user->id)->get();
+        $all_spells                     = Spell::all();
+        $character_lessons              = CharacterLesson::all();
+        $all_lessons                    = Lesson::all();
+        $locations                      = Location::all();
+        $all_periods                    = PeriodCup::all();
+        return view('character.spell', [
+            'user'                      => $user,
+            'character'                 => $character,
+            'character_spells'          => $character_spells,
+            'all_spells'                => $all_spells,
             'character_lessons'         => $character_lessons,
             'all_lessons'               => $all_lessons,
             'locations'                 => $locations,

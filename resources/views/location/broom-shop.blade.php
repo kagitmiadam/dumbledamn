@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-<div id="auth-homepage" class="wrapper">
+<div id="auth-homepage" class="wrapper shop">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -17,7 +17,75 @@
                             <h5 class="text-center">{{$location->name}}</h5>
                         </div>
                         <hr>
-                        Quidditch Dükkanı
+                        <div class="shop-inner">
+                            <div class="row">
+                                @foreach ($brooms as $item)
+                                    <div class="col-md-2 col-6 broom-shop" data-bs-toggle="modal" data-bs-target="#broom{{ $item->id }}">
+                                        <div class="shop-item dd-tooltip" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{$item->description}}">
+                                            <img src="{{asset($item->image)}}" alt="" class="icon">
+                                            <div class="text">
+                                                <p>Hız: {{$item->speed_power}}</p>
+                                                @php $discounted_price3 = 0; $discount_description = "";@endphp
+                                                @if($user->character->core_preffered != null)
+                                                    @if($user->character->core_preffered->core_name == $item->core->core_name and $item->discount > 0)
+                                                        @php
+                                                            $discounted_price1 = $item->price * 0.2;
+                                                            $discounted_price2 = ($item->price-$discounted_price1) * $item->discount;
+                                                            $discounted_price3 = $discounted_price1 + $discounted_price2;
+                                                            $discount_description = "Size özel olan " .$user->character->core_preffered->core_name . " içeren tüm asalarda %20 indirim ve +%" . $item->discount*100 . " indirim." @endphp
+                                                        <td class="text-center dd-tooltip" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{$discount_description}}">
+                                                            <p>Eski Fiyat:&nbsp;<span class="text-line-through">{{ $item->price }}</span> <img src="{{asset('img/icon/galleon.svg')}}" alt="" class="galleon-icon"></p>
+                                                            <p>Fiyat: {{ round($item->price-$discounted_price3) }} <img src="{{asset('img/icon/galleon.svg')}}" alt="" class="galleon-icon"></p>
+                                                        </td>
+                                                    @elseif($user->character->core_preffered->core_name == $item->core->core_name)
+                                                        @php $discounted_price3 = $item->price * 20 / 100 @endphp
+                                                        @php $discount_description = "Size özel olan " .$user->character->core_preffered->core_name . " içeren tüm asalarda %20 indirim." @endphp
+                                                        <td class="text-center dd-tooltip" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{$discount_description}}">
+                                                            <p>Eski Fiyat:&nbsp;<span class="text-line-through">{{ $item->price }}</span> <img src="{{asset('img/icon/galleon.svg')}}" alt="" class="galleon-icon"></p>
+                                                            <p>Fiyat: {{ round($item->price-$discounted_price3) }} <img src="{{asset('img/icon/galleon.svg')}}" alt="" class="galleon-icon"></p>
+                                                        </td>
+                                                    @elseif($item->discount > 0)
+                                                        @php $discounted_price3 = $item->price * $item->discount @endphp
+                                                        @php $discount_description = "Seçili ürün(ler)de %" . $item->discount*100 . " indirim." @endphp
+                                                        <td class="text-center dd-tooltip" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{$discount_description}}">
+                                                            <p>Eski Fiyat:&nbsp;<span class="text-line-through">{{ $item->price }}</span> <img src="{{asset('img/icon/galleon.svg')}}" alt="" class="galleon-icon"></p>
+                                                            <p>Fiyat: {{ round($item->price-$discounted_price3) }} <img src="{{asset('img/icon/galleon.svg')}}" alt="" class="galleon-icon"></p>
+                                                        </td>
+                                                    @elseif($item->discount == 0)
+                                                        <td class="text-center">
+                                                            <p>Fiyat: {{ $item->price }} <img src="{{asset('img/icon/galleon.svg')}}" alt="" class="galleon-icon"></p>
+                                                        </td>
+                                                    @endif
+                                                @else
+                                                    @if($item->discount == 0)
+                                                        <td class="text-center">
+                                                            <p>Fiyat: {{ $item->price }} <img src="{{asset('img/icon/galleon.svg')}}" alt="" class="galleon-icon"></p>
+                                                        </td>
+                                                    @elseif($item->discount > 0)
+                                                        @php $discounted_price3 = $item->price * $item->discount @endphp
+                                                        @php $discount_description = "Seçili ürün(ler)de %" . $item->discount*100 . " indirim." @endphp
+                                                        <td class="text-center dd-tooltip" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{$discount_description}}">
+                                                            <p>Eski Fiyat:&nbsp;<span class="text-line-through">{{ $item->price }}</span> <img src="{{asset('img/icon/galleon.svg')}}" alt="" class="galleon-icon"></p>
+                                                            <p>Fiyat: {{ round($item->price-$discounted_price3) }} <img src="{{asset('img/icon/galleon.svg')}}" alt="" class="galleon-icon"></p>
+                                                        </td>
+                                                    @endif
+                                                @endisset
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @php $item_status = ""; $item_table_id = ""; $current_item_count = ""; $new_count = ""; @endphp
+                                    @foreach($character_items->where('character_id', $user->character->id)
+                                        ->where('item_id', $item->id) as $character_quill)
+                                        @php
+                                            $item_status = 1;
+                                            $current_item_id = $character_quill->id;
+                                            $current_item_count = $character_quill->count;
+                                        @endphp
+                                    @endforeach
+                                    @include('components.modal.broom-shop-modal')
+                                @endforeach
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

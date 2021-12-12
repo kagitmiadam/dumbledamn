@@ -22,6 +22,8 @@ class DatabaseSeeder extends Seeder
         $this->call(SpellSeeder::class);
         $this->call(SpellLevelSeeder::class);
         $this->call(PeriodCupSeeder::class);
+        $this->call(LessonSeeder::class);
+        $this->call(BookSeeder::class);
         $this->call(CharacterSeeder::class);
         $this->call(PeriodCupDetailSeeder::class);
         $this->call(CharacterSpellSeeder::class);
