@@ -6,6 +6,8 @@
 
 Harry Potter temalı bir browser RPG oyunudur.
 
+DEMO: [http://harry-potter.canturkozdemir.com/](http://harry-potter.canturkozdemir.com/ "Harry Potter Browser RPG Game")
+
 - Asanı al
 - Okulunu belirle
 - Büyülerini seç
