@@ -93,7 +93,7 @@
             <hr>
             <div class="form-row">
                 <div class="col-md-12">
-                    <div class="d-flex d-align">
+                    <div class="d-flex align-items-center">
                         <form action="/item/wear" method="POST">
                             @csrf
                             <input type="text" name="item_type" id="item_type" value="{{ $item->item->type }}" hidden/>
@@ -175,16 +175,16 @@
                                     <input type="text" name="current_equipped_item_id" value="{{ $character_item->item_id }}" hidden/>
                                     <input type="text" name="current_equipped_item_count" value="{{ $character_item->count }}" hidden/>
                                     @if($item->item->id == $character_item->item_id)
-                                        <i class="fa fa-info-circle mr-1" data-toggle="tooltip" data-placement="top" title="Bu {{ $item_type }} kuşanıldı."></i>
+                                        <img src="{{asset('img/icon/info.png')}}" alt="" class="dd-tooltip" style="max-width:20px; filter: invert(1);" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Bu {{ $item_type }} zaten kuşanıldı.">
                                     @elseif($item->item->id != $character_item->item_id)
-                                        <button type="submit" class="dd-btn bg-{{$user->character->school_class->color}}-color text-white rounded mr-1">
+                                        <button type="submit" class="dd-btn bg-{{$user->character->school_class->color}}-color text-white rounded" style="margin-right:20px;">
                                             Kuşan
                                         </button>
                                     @endif
                                 @endif
                             @endforeach
                             @if($equipped_item_id == null)
-                                <button type="submit" class="dd-btn bg-{{$user->character->school_class->color}}-color text-white rounded mr-1">
+                                <button type="submit" class="dd-btn bg-{{$user->character->school_class->color}}-color text-white rounded" style="margin-right:20px;">
                                     Kuşan
                                 </button>
                             @endif

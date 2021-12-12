@@ -146,8 +146,7 @@
                                                 <div class="bg-{{ $period_character->character->school_class->color }}-color rounded p-1 text-center">
                                                     <p>Bu sezon en fazla puan toplayan karakter: </p>
                                                     <p>
-                                                        {{-- <a href="{{ route('get-character-info', ['character_id' => $period_character->character->id]) }}" class="text-white fw-bold">{{ $period_character->character->name }}</a>, --}}
-                                                        <a href="#" class="text-white fw-bold">{{ $period_character->character->name }}</a>,
+                                                        <a href="#" class="text-white fw-bold">{{ $period_character->character->user->name }}</a>,
                                                         {{ $period_character->total_point }} puan topladı.
                                                     </p>
                                                 </div>
@@ -159,8 +158,7 @@
                                                 <div class="bg-{{ $period_character->character->school_class->color }}-color rounded p-1 text-center">
                                                     <p>Bu sezon en az puan toplayan karakter: </p>
                                                     <p>
-                                                        {{-- <a href="{{ route('get-character-info', ['character_id' => $period_character->character->id]) }}" class="text-white fw-bold">{{ $period_character->character->name }}</a>, --}}
-                                                        <a href="#" class="text-white fw-bold">{{ $period_character->character->name }}</a>,
+                                                        <a href="#" class="text-white fw-bold">{{ $period_character->character->user->name }}</a>,
                                                         {{ $period_character->total_point }} puan topladı.
                                                     </p>
                                                 </div>
@@ -205,15 +203,14 @@
                                             @endif
                                         @endif
                                     @endforeach
-                                    {{ $period_details->links() }}
                                 </div>
                             @else
-                                <div class="alert @include('components.other.class-color-background') mt-2">
+                                <div class="alert bg-{{$user->character->school_class->color}}-color mt-2">
                                     Bu dönem kazanılan puan bilgisi yok.
                                 </div>
                             @endif
                         @else
-                            <div class="alert @include('components.other.class-color-background')">
+                            <div class="alert bg-{{$user->character->school_class->color}}-color">
                                 Bu bilgiler başka bir okula aittir.
                             </div>
                             @include('periods.components.past-period')

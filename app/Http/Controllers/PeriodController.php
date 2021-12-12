@@ -27,8 +27,7 @@ class PeriodController extends Controller
         $sub_locations                  = Location::all();
         $spells                         = Spell::all();
         $all_periods                    = PeriodCup::all();
-        $all_past_periods               = PeriodCup::where('school_id', '=', Auth::user()->character->school->id)
-                                       ->paginate(5);
+        $all_past_periods               = PeriodCup::where('school_id', '=', Auth::user()->character->school->id)->get();
         $classes_cup_wins               = PeriodCup::select('class_id_1', 'point_1', 'class_id_2', 'point_2', 'class_id_3', 'point_3', 'class_id_4', 'point_4', 'status')
                                         ->where('school_id', '=', Auth::user()->character->school->id)
                                         ->where('status', '=', 2)
@@ -59,8 +58,7 @@ class PeriodController extends Controller
         $sub_locations                  = Location::all();
         $spells                         = Spell::all();
         $all_periods                    = PeriodCup::all();
-        $all_past_periods               = PeriodCup::where('school_id', '=', Auth::user()->character->school->id)
-                                        ->paginate(5);
+        $all_past_periods               = PeriodCup::where('school_id', '=', Auth::user()->character->school->id)->get();
         $classes_cup_wins               = PeriodCup::select('class_id_1', 'point_1', 'class_id_2', 'point_2', 'class_id_3', 'point_3', 'class_id_4', 'point_4', 'status')
                                         ->where('school_id', '=', Auth::user()->character->school->id)
                                         ->where('status', '=', 2)
@@ -119,7 +117,7 @@ class PeriodController extends Controller
         $current_period             = PeriodCup::find($id);
         $past_period                = PeriodCup::find($id);
         $selected_period            = PeriodCup::find($id);
-        $period_details             = PeriodCupDetail::where('period_id', $id)->paginate(10);
+        $period_details             = PeriodCupDetail::where('period_id', $id)->get();
         $period_characters          = PeriodCupDetail::groupBy('character_id')
                                       ->select('character_id')
                                       ->selectRaw("SUM(point) as total_point")

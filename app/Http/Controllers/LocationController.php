@@ -7,6 +7,7 @@ use App\Models\CharacterBook;
 use App\Models\CharacterInventory;
 use App\Models\CharacterLesson;
 use App\Models\PeriodCup;
+use App\Models\PeriodCupDetail;
 use App\Models\Location;
 use App\Models\Items;
 use App\Models\Book;
@@ -251,6 +252,32 @@ class LocationController extends Controller
         $update2->note_status = $request->quiz_point;
         $update2->note_status_short = $request->quiz_point;
         $update2->save();
+
+        $update3 = PeriodCup::find($request->period_id);
+        if ($user->character->school->id == 1) {
+            $update3->point_1 = $request->quiz_point;
+        }
+        if ($user->character->school->id == 2) {
+            $update3->point_2 = $request->quiz_point;
+        }
+        if ($user->character->school->id == 3) {
+            $update3->point_3 = $request->quiz_point;
+        }
+        if ($user->character->school->id == 4) {
+            $update3->point_4 = $request->quiz_point;
+        }
+        $update3->save();
+
+        $submit2 = new PeriodCupDetail;
+        $submit2->description = "Sınav tamamladı.";
+        $submit2->character_id = $user->character->id;
+        $submit2->school_id = $user->character->school->id;
+        $submit2->class_id = $user->character->school_class->id;
+        $submit2->period_id = $request->period_id;
+        $submit2->point = $request->quiz_point;
+        $submit2->privacy = "Genel";
+        $submit2->status = 1;
+        $submit2->save();
         return redirect()->route('get-school', ['id' => 1]);
     }
 }

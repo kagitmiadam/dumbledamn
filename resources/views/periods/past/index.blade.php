@@ -150,7 +150,6 @@
                                 <hr>
                             @endif
                         @endforeach
-                        {{ $all_past_periods->links() }}
                     </div>
                 </div>
             </div>

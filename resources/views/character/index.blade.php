@@ -51,12 +51,10 @@
                                             @if($full_predisposition > 0)
                                                 <p>Ustalık kazanılan büyü sayısı: {{ $full_predisposition }}</p>
                                             @endif
-                                            {{-- {{ route('get-spell') }} --}}
                                             <div class="character-new-equipment">
                                                 <div><a href="{{route('get-spell')}}" class="btn-{{$user->character->school_class->color}}">Tüm büyüleri görüntüle</a></div>
                                             </div>
                                         @else
-                                        {{-- {{ route('get-spell') }} --}}
                                         <span>Şuan hiç bir büyü bilmiyorsunuz. <a href="{{route('get-spell')}}" class="{{$user->character->school_class->color}}-color-link-light">Mevcut büyü listesini</a> inceleyebilir, derslere katılarak yeni büyüler öğrenmeye başlayabilirsiniz!</span>
                                         @endif
                                     </div>
@@ -83,7 +81,7 @@
                                             @endforeach
                                         </div>
                                     @endif
-                                    @if($item_count > 4)
+                                    @if($item_count > 0)
                                         <div class="mb-4">
                                             <a class="{{$user->character->school_class->color}}-color-link" href="{{ route('get-inventory') }}">
                                                 Tüm envanteri görüntüle
@@ -115,7 +113,7 @@
                                             @endforeach
                                         </div>
                                     @endif
-                                    @if($library_count > 4)
+                                    @if($library_count > 0)
                                         <div>
                                             <a class="{{$user->character->school_class->color}}-color-link" href="{{ route('get-book-inventory') }}">
                                                 Tüm kitapları görüntüle
