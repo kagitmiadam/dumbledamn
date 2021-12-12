@@ -78,29 +78,29 @@ $(document).ready(function () {
 
 (function() {
   var questions = [{
-    question: "İlk önce, boyunuzu nasıl tanımlarsınız?",
-    choices: ["Ortalama", "Uzun", "Kısa", "Emin Değilim"],
+    question: "Hangi Quidditch pozisyonunda oynardın?",
+    choices: ["Forvet", "Defans", "Ortasaha", "Ben joker oyuncuyum"],
     snallygasterAnswer: 3,
     jackalopeAnswer: 0,
     basiliskAnswer: 1,
     golCanavariAnswer: 2,
   }, {
-    question: "Peki ya göz renginiz?",
-    choices: ["Mavi", "Yeşil", "Ela", "Diğer"],
+    question: "Hangi ikili daha iyi olurdu",
+    choices: ["Hermoni/Ron", "Hermoni/Harry", "Harry/Ron :(", "Hiçbiri"],
     snallygasterAnswer: 3,
     jackalopeAnswer: 1,
     basiliskAnswer: 0,
     golCanavariAnswer: 2,
   }, {
-    question: "Doğum tarihiniz tek rakam mı, yoksa çift rakam mı?",
-    choices: ["1-10", "11-15", "16-20", "21-31"],
+    question: "Herhangi bir Harry Potter kitabı okudunuz mu?",
+    choices: ["Tabi ki canım", "Filmlerini izledim hem de kaç kere", "Filmler kitap gibi değil yea", "Yanıtlamak istemiyorum :("],
     snallygasterAnswer: 0,
     jackalopeAnswer: 1,
     basiliskAnswer: 2,
     golCanavariAnswer: 3,
   }, {
-    question: "Kendinle ilgili en çok gurur duyduğun şey nedir?",
-    choices: ["Hayal Gücü", "Dayanıklılık", "Zeka", "İyimserlik"],
+    question: "En sevdiğin büyü hangisi",
+    choices: ["ACCIO", "EXPELLIARMUS", "LUMOS", "Büyü bizi bozar"],
     snallygasterAnswer: 0,
     jackalopeAnswer: 3,
     basiliskAnswer: 2,
@@ -113,8 +113,8 @@ $(document).ready(function () {
     basiliskAnswer: 0,
     golCanavariAnswer: 1,
   }, {
-    question: "En büyük korkunuz nedir?",
-    choices: ["Ateş", "Karanlık", "Yükseklik", "Dar Alanlar"],
+    question: "Kiminle savaşmak istemezdin",
+    choices: ["Basilisk", "Dementor", "Dumbledore", "Bellatrix"],
     snallygasterAnswer: 2,
     jackalopeAnswer: 3,
     basiliskAnswer: 1,
