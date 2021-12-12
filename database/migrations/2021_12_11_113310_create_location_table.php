@@ -22,7 +22,6 @@ class CreateLocationTable extends Migration
             $table->string('house_affiliation')->nullable();
             $table->string('image')->default('img/none.png');
             $table->string('icon')->default();
-            $table->string('role_play_status')->default('Aktif');
             $table->integer('status')->default(1);
             $table->timestamps();
 

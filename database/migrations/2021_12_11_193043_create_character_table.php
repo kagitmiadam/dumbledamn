@@ -26,6 +26,9 @@ class CreateCharacterTable extends Migration
             $table->integer('broom_id')->unsigned()->nullable();
             $table->integer('pet_id')->unsigned()->nullable();
             
+            $table->integer('attack_power')->nullable()->default(0);
+            $table->integer('defence_power')->nullable()->default(0);
+            $table->integer('speed_power')->nullable()->default(0);
             $table->string('status')->default("Asa Seçim");
             $table->timestamps();
 

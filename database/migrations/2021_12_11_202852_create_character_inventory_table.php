@@ -6,11 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateCharacterInventoryTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('character_inventory', function (Blueprint $table) {
@@ -27,11 +22,6 @@ class CreateCharacterInventoryTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('character_inventory');

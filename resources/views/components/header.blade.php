@@ -22,7 +22,7 @@
                 <div class="period-cup-icon dd-tooltip" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Dönem Kupası bilgisi">
                     <a href="{{route('get-past-period-info')}}">
                         <img src="{{asset('img/icon/period-cup.png')}}" alt="" class="icon">
-                        <span class="{{$user->character->school_class->color}}-color">Dönem Bilgisi</span>
+                        <span class="{{$user->character->school_class->color}}-color-link-light">Dönem Bilgisi</span>
                     </a>
                 </div>
             </div>

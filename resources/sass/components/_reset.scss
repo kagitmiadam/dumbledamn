@@ -143,6 +143,41 @@ button {
     background: #212121;
 }
 
+.dd-btn {
+    border: none;
+}
+
+.table {
+    border: 1px solid !important;
+    .title-field {
+        td {
+            font-weight: bold;
+            color: #fff;
+            background: #bdc1ab;
+            text-align: center;
+            vertical-align: middle;
+            border: 1px solid !important;
+        }
+    }
+    .content-field {
+        color: #fff;
+        td {
+            border: 1px solid #fff;
+            vertical-align: middle;
+        }
+    }
+    .text-line-through {
+        text-decoration: line-through;
+    }
+    .info {
+        img {
+            max-width: 30px;
+            object-fit: contain;
+            filter: invert(1);
+        }
+    }
+}
+
 .bg-black-container {
     background: rgba(0, 0, 0, 0.5);
     position: absolute;
@@ -155,7 +190,7 @@ button {
     transition: .45s;
     z-index: 4;
     &.active {
-      opacity: 1;
-      visibility: visible;
+        opacity: 1;
+        visibility: visible;
     }
-  }
+}

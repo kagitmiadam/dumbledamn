@@ -11,6 +11,10 @@ use App\Models\SchoolClass;
 use App\Models\Location;
 use App\Models\LocationType;
 use App\Models\Spell;
+use App\Models\CharacterInventory;
+use App\Models\Lesson;
+use App\Models\CharacterLesson;
+use App\Models\PeriodCup;
 
 class CharacterController extends Controller
 {
@@ -56,6 +60,80 @@ class CharacterController extends Controller
         $user = Auth::user();
         $update = Character::find($user->id);
         $update->preffered_core = $request->preffered_core;
+        if($request->preffered_core == 1) {
+            $character_wand_id = rand(1,5);
+            $character_wand_ap = 22;
+            $character_wand_dp = 17;
+            $character_gown_ap = 12;
+            $character_gown_dp = 8;
+            $character_attack_power = $character_wand_ap + $character_gown_ap;
+            $character_defence_power = $character_wand_dp + $character_gown_dp;
+            if($user->character->school_class->color == "gryffindor") {
+                $character_gown_id = 36;
+            } else if($user->character->school_class->color == "slytherin") {
+                $character_gown_id = 44;
+            } else if($user->character->school_class->color == "hufflepuff") {
+                $character_gown_id = 48;
+            } else if($user->character->school_class->color == "ravenclaw") {
+                $character_gown_id = 40;
+            }
+        } else if($request->preffered_core == 2) {
+            $character_wand_id = rand(6,10);
+            $character_wand_ap = 20;
+            $character_wand_dp = 20;
+            $character_gown_ap = 10;
+            $character_gown_dp = 11;
+            $character_attack_power = $character_wand_ap + $character_gown_ap;
+            $character_defence_power = $character_wand_dp + $character_gown_dp;
+            if($user->character->school_class->color == "gryffindor") {
+                $character_gown_id = 37;
+            } else if($user->character->school_class->color == "slytherin") {
+                $character_gown_id = 45;
+            } else if($user->character->school_class->color == "hufflepuff") {
+                $character_gown_id = 49;
+            } else if($user->character->school_class->color == "ravenclaw") {
+                $character_gown_id = 41;
+            }
+        } else if($request->preffered_core == 3) {
+            $character_wand_id = rand(11,15);
+            $character_wand_ap = 17;
+            $character_wand_dp = 22;
+            $character_gown_ap = 7;
+            $character_gown_dp = 13;
+            $character_attack_power = $character_wand_ap + $character_gown_ap;
+            $character_defence_power = $character_wand_dp + $character_gown_dp;
+            if($user->character->school_class->color == "gryffindor") {
+                $character_gown_id = 38;
+            } else if($user->character->school_class->color == "slytherin") {
+                $character_gown_id = 46;
+            } else if($user->character->school_class->color == "hufflepuff") {
+                $character_gown_id = 50;
+            } else if($user->character->school_class->color == "ravenclaw") {
+                $character_gown_id = 42;
+            }
+        } else if($request->preffered_core == 4) {
+            $character_wand_id = rand(16,20);
+            $character_wand_ap = 15;
+            $character_wand_dp = 25;
+            $character_gown_ap = 5;
+            $character_gown_dp = 16;
+            $character_attack_power = $character_wand_ap + $character_gown_ap;
+            $character_defence_power = $character_wand_dp + $character_gown_dp;
+            if($user->character->school_class->color == "gryffindor") {
+                $character_gown_id = 39;
+            } else if($user->character->school_class->color == "slytherin") {
+                $character_gown_id = 47;
+            } else if($user->character->school_class->color == "hufflepuff") {
+                $character_gown_id = 51;
+            } else if($user->character->school_class->color == "ravenclaw") {
+                $character_gown_id = 43;
+            }
+        }
+        $update->wand_id = $character_wand_id;
+        $update->gown_id = $character_gown_id;
+        $update->attack_power = $character_attack_power;
+        $update->defence_power = $character_defence_power;
+        $update->speed_power = 0;
         $update->status = $request->status;
 
         $update->save();
@@ -100,6 +178,26 @@ class CharacterController extends Controller
             'locations'                 => $locations,
             'sub_locations'             => $sub_locations,
             'spells'                    => $spells,
+        ]);
+    }
+    public function characterItem() {
+        $user                       = Auth::user();
+        $character                  = $user->id;
+        $character_items            = CharacterInventory::where('character_id', $user->id)
+                                                        ->paginate(10);
+        $character_lessons          = CharacterLesson::all();
+        $all_lessons                = Lesson::all();
+        $locations                  = Location::all();
+        $all_periods                = PeriodCup::all();
+        return view('character.item', [
+            'user'                      => $user,
+            'character'                 => $character,
+            'character_items'           => $character_items,
+            'character_lessons'         => $character_lessons,
+            'all_lessons'               => $all_lessons,
+            'locations'                 => $locations,
+            'sub_locations'             => $locations,
+            'all_periods'               => $all_periods,
         ]);
     }
 }

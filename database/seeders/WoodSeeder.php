@@ -16,7 +16,6 @@ class WoodSeeder extends Seeder
             ["Söğüt"        , 10        , 10            , 1         , 100       , "Başlangıç"],
             ["Porsuk"       , 10        , 10            , 1         , 100       , "Başlangıç"],
             ["Maun"         , 10        , 10            , 1         , 100       , "Başlangıç"],
-            // 16 Üst - 9 Gelişmiş - 9 Orta - 5 Başlanıç: 39 adet
         ];
         foreach ($wood_lists as $wood_list) {
             Wood::create([

@@ -86,7 +86,7 @@
                                             <div class="spell-box">
                                                 @foreach($top_ten_spells->slice(0,10) as $spell)
                                                     <div class="spell-info dd-tooltip" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{ $spell->spell->name }} | Ustalık: %{{ $spell->predisposition }}">
-                                                        <img src="img/spell/{{ $spell->spell->id }}.png" alt="" data-bs-toggle="modal" data-bs-target="#knowingSpellInfo{{ $spell->spell->id }}" class="c-pointer">
+                                                        <img src="img/spell/{{ $spell->spell->id }}.png" alt="" data-bs-toggle="modal" data-bs-target="#knowingSpellInfo{{ $spell->spell->id }}" class="cursor-pointer">
                                                     </div>
                                                     @include('components.modal.knowing-spell-info')
                                                 @endforeach
@@ -100,7 +100,7 @@
                                             </div>
                                         @else
                                         {{-- {{ route('get-spell') }} --}}
-                                        <span>Şuan hiç bir büyü bilmiyorsunuz. <a href="" class="{{$user->character->school_class->color}}-color">Mevcut büyü listesini</a> inceleyebilir, derslere katılarak yeni büyüler öğrenmeye başlayabilirsiniz!</span>
+                                        <span>Şuan hiç bir büyü bilmiyorsunuz. <a href="" class="{{$user->character->school_class->color}}-color-link-light">Mevcut büyü listesini</a> inceleyebilir, derslere katılarak yeni büyüler öğrenmeye başlayabilirsiniz!</span>
                                         @endif
                                     </div>
                                 </div>
@@ -109,6 +109,15 @@
                                 <div class="inventroy-field">
                                     <p class="title">Envanter</p>
                                     <hr>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="statistic-field">
+                                    <p class="title">İstatistikler</p>
+                                    <hr>
+                                    <p>Saldırı Gücü: {{$user->character->attack_power}}</p>
+                                    <p>Savunma Gücü: {{$user->character->defence_power}}</p>
+                                    <p>Hız: {{$user->character->speed_power}}</p>
                                 </div>
                             </div>
                         </div>

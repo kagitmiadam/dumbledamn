@@ -16,6 +16,7 @@ class CharacterSeeder extends Seeder
         $character->school_class_id = 1;
         $character->school_grade_id = 1;
         $character->preffered_core = 1;
+        $character->galleon = 10000;
         $character->wand_id = 1;
         $character->gown_id = 36;
         $character->broom_id = 76;

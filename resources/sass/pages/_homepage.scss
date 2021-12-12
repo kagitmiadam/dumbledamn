@@ -150,10 +150,11 @@
                     bottom: 0;
                     .form-field {
                         height: 100%;
-                        transform: translateY(315px) translateX(0);
+                        transform: translateY(325px) translateX(0);
                         .content-select {
                             display: flex;
                             justify-content: center;
+                            margin-bottom: 20px;
                             h1 {
                                 color: #707070;
                                 font-family: $font-family-hp;
@@ -206,7 +207,9 @@
             }
         }
     }
-
+    .error-message {
+        color: red;
+    }
     @keyframes homepageBg1 {
         0% {
             opacity: 1;
