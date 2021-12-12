@@ -15,8 +15,6 @@
                 </div>
                 <div class="col-md-6 col-12">
                     <div class="br-hr-color">
-                        {{-- <p><span class="text-underline">Öğrenilebileceği Sınıf:</span> {{ $spell->school_grade->name }}</p> --}}
-                        {{-- <p><span class="text-underline">Büyü Türü:</span> {{ $spell->type->name }}</p> --}}
                         <p><span class="text-underline">Saldırı Gücü:</span> {{ $spell->spell->attack_power }}</p>
                         <p><span class="text-underline">Savunma Gücü:</span> {{ $spell->spell->defence_power }}</p>
                     </div>

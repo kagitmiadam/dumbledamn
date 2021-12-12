@@ -48,7 +48,7 @@ class BuyController extends Controller
                 $update2->save();
             }
     
-            return redirect()->route('get-item')->with('success', 'Kuşanma başarılı!');
+            return redirect()->route('get-inventory')->with('success', 'Kuşanma başarılı!');
         }
         // Item (Ekipman) Satın Alma | Güncelleme (Evcil Hayvan, Asa, Pelerin, Süpürge)
         public function updateItem(Request $request) {
@@ -57,14 +57,14 @@ class BuyController extends Controller
     
             $location = $request->location_id;
             if ($request->galleon * $request->count > Auth::user()->character->galleon) {
-                return redirect()->route('get-item', ['id' => $location])->with('danger', 'Para yetersiz!');
+                return redirect()->route('get-inventory', ['id' => $location])->with('danger', 'Para yetersiz!');
             } else {
                 $update->id = $request->id;
                 $update->count = $update->count + $request->count;
                 $update->save();
                 $update1->galleon = $request->galleon;
                 $update1->save();
-                return redirect()->route('get-item', ['id' => $location])->with('success', 'Satın alma başarılı!');
+                return redirect()->route('get-inventory', ['id' => $location])->with('success', 'Satın alma başarılı!');
             }
         }
         // Item (Ekipman) Satın Alma | Ekleme
@@ -74,7 +74,7 @@ class BuyController extends Controller
     
             $location = $request->location_id;
             if ($request->galleon * $request->count > Auth::user()->character->galleon) {
-                return redirect()->route('get-item', ['id' => $location])->with('danger', 'Para yetersiz!');
+                return redirect()->route('get-inventory', ['id' => $location])->with('danger', 'Para yetersiz!');
             } else {
                 $submit->item_id = $request->item_id;
                 $submit->character_id = $request->character_id;
@@ -82,7 +82,7 @@ class BuyController extends Controller
                 $submit->save();
                 $update->galleon = $request->galleon;
                 $update->save();
-                return redirect()->route('get-item', ['id' => $location])->with('success', 'Satın alma başarılı!');
+                return redirect()->route('get-inventory', ['id' => $location])->with('success', 'Satın alma başarılı!');
             }
         }
         // Item (Ekipman) Satma | Delete
@@ -102,14 +102,14 @@ class BuyController extends Controller
                 $delete->delete();
             }
     
-            return redirect()->route('get-item')->with('success', 'Satma başarılı!');
+            return redirect()->route('get-inventory')->with('success', 'Satma başarılı!');
         }
         // Kitap | Satın Alma | Submit
         public function submitBook(Request $request) {
             $submit = new CharacterBook;
             $submit->book_id = $request->book_id;
             $submit->character_id = $request->character_id;
-            $submit->status = $request->status;
+            $submit->status = 1;
             $submit->save();
     
             $update = Character::find($request->character_id);
@@ -117,11 +117,11 @@ class BuyController extends Controller
             $update->save();
     
             $location = $request->location_id;
-            return redirect()->route('get-item', ['id' => $location])->with('success', 'Satın alma başarılı!');
+            return redirect()->route('get-book-inventory', ['id' => $location])->with('success', 'Satın alma başarılı!');
         }
         // Kitap | Satma | Delete
         public function deleteBook(Request $request) {
-            $delete = CharacterBook::find($request->id);
+            $delete = CharacterBook::find($request->book_id);
             $delete->delete();
     
             $update = Character::find($request->character_id);
@@ -129,6 +129,6 @@ class BuyController extends Controller
             $update->save();
     
             $location = $request->location_id;
-            return redirect()->route('get-item', ['id' => $location])->with('success', 'Satın alma başarılı!');
+            return redirect()->route('get-book-inventory', ['id' => $location])->with('success', 'Satın alma başarılı!');
         }
 }

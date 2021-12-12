@@ -81,7 +81,7 @@ class ItemSeeder extends Seeder
             ["Sihir Bakanı"     , 750       , 10        , 10        , "Üst"       ],
             ["Ruh Emici"        , 1000      , 15        , 15        , "Üst"       ],
         ];
-        $gown_id        = 0;
+        $gown_id  = 0;
         foreach ($gowns as $gown) {
             foreach ($core_names as $core_name) {
                 $gown_id = $gown_id + 1;
@@ -103,17 +103,19 @@ class ItemSeeder extends Seeder
         
         /* Süpürgeler | Brooms */
         $brooms = [
-            // 0: İsim          1: Fiyat    2: Speed    3: Tür          4: Image
-            ["Silsüpür 11"      , 100       , 6         , "Başlangıç"   , "img/broom/1.png"],
-            ["Comet 260"        , 150       , 8         , "Başlangıç"   , "img/broom/2.png"],
-            ["Ateşoku"          , 250       , 10        , "Başlangıç"   , "img/broom/3.png"],
-            ["Ateşoku Supreme"  , 350       , 12        , "Başlangıç"   , "img/broom/4.png"],
-            ["Aydüzeltici"      , 300       , 13        , "Başlangıç"   , "img/broom/5.png"],
-            ["Yıldırımoku VII"  , 400       , 15        , "Başlangıç"   , "img/broom/6.png"],
-            ["Nimbus 2001"      , 400       , 18        , "Başlangıç"   , "img/broom/7.png"],
+            // 0: İsim          1: Fiyat    2: Speed    3: Tür
+            ["Silsüpür 11"      , 100       , 6         , "Başlangıç" ],
+            ["Comet 260"        , 150       , 8         , "Başlangıç" ],
+            ["Ateşoku"          , 250       , 10        , "Başlangıç" ],
+            ["Ateşoku Supreme"  , 350       , 12        , "Başlangıç" ],
+            ["Aydüzeltici"      , 300       , 13        , "Başlangıç" ],
+            ["Yıldırımoku VII"  , 400       , 15        , "Başlangıç" ],
+            ["Nimbus 2001"      , 400       , 18        , "Başlangıç" ],
         ];
+        $broom_id = 0;
         foreach ($brooms as $broom) {
             foreach ($core_names as $core_name) {
+                $broom_id = $broom_id + 1;
                 Item::create([
                     'name'              => $core_name->short_name . " ". $broom[0],
                     'short_name'        => $broom[0],
@@ -124,7 +126,7 @@ class ItemSeeder extends Seeder
                     'price'             => ($broom[1] + $core_name->price),
                     'speed_power'       => ($broom[2] + $core_name->speed_power),
                     'based_count'       => 1,
-                    'image'             => $broom[4],
+                    'image'             => "img/broom/".($broom_id).".png",
                 ]);
             }
         }

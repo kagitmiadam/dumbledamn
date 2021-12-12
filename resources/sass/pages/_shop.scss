@@ -25,6 +25,9 @@
                 width: 16px;
                 margin-left: 5px;
             }
+            .text {
+                min-height: 70px;
+            }
         }
     }
     .modal-title {
@@ -44,6 +47,38 @@
                 object-fit: contain;
                 margin-bottom: 10px;
             }
+        }
+    }
+    .broom-shop {
+        .shop-item {
+            .icon {
+                width: 100%;
+                height: 80px;
+                object-fit: contain;
+                margin-bottom: 10px;
+            }
+        }
+    }
+    .book-shop {
+        .shop-item {
+            .text {
+                min-height: auto;
+            }
+        }
+    }
+    .book-shop-modal {
+        .modal-image {
+            .icon {
+                width: 100%;
+                height: 450px;
+                object-fit: contain;
+                margin-bottom: 10px;
+            }
+        }
+        .galleon-icon {
+            object-fit: contain;
+            width: 16px;
+            margin-left: 5px;
         }
     }
 }

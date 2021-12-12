@@ -70,3 +70,17 @@
         }
     }
 }
+
+.gelecek-postasi {
+    .content {
+        text-align: center;
+        p {
+            margin-bottom: 10px;
+            a {
+                &:hover {
+                    color: #fff;
+                }
+            }
+        }
+    }
+}

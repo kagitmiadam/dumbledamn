@@ -13,7 +13,7 @@ class Book extends Model
 
     protected $table = "book";
 
-    public function Lesson() {
+    public function lesson() {
         return $this->belongsTo(Lesson::class);
     }
 }

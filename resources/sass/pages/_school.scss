@@ -1,0 +1,36 @@
+.school {
+    .text-content {
+        margin-bottom: 20px;
+        p {
+            margin-bottom: 10px;
+        }
+    }
+    .lesson-content {
+        margin-bottom: 20px;
+        img {
+            width: 100%;
+            max-height: 300px;
+            object-fit: contain;
+        }
+    }
+    .modal-image {
+        img {
+            width: 100%;
+            max-height: 300px;
+            object-fit: contain;
+        }
+    }
+    .finish-quiz-field {
+        opacity: 0;
+        visibility: hidden;
+        display: none;
+        &.active {
+            opacity: 1;
+            visibility: visible;
+            display: block;
+        }
+        .next-page {
+            
+        }
+    }
+}

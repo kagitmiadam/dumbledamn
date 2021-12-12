@@ -42,12 +42,6 @@
                             <span>{{ $item->item->wood->name }}</span>
                         </p>
                     @endisset
-                    @isset($item->item->tier_id)
-                        <p>
-                            <span class="text-underline">Kalitesi:</span>
-                            <span>{{ $item->item->tier->name }}</span>
-                        </p>
-                    @endisset
                     <p>
                         <span class="text-underline">Açıklama:</span> {{ $item->item->description }}
                     </p>
@@ -67,7 +61,7 @@
                             <span class="text-underline">Seçilen {{ $item_name }} Saldırı Gücü:</span>
                             <span> {{ $item->item->attack_power }}</span>
                         </p>
-                        @include('components.modal.shop-item-modal-attack-component')
+                        @include('components.modal.inventory-item-modal-attack-component')
                     </div>
                     <div class="col-md-6">
                         <p class="f-16 text-center text-underline fw-bold">Savunma Gücü Bilgileri</p>
@@ -79,7 +73,7 @@
                             <span class="text-underline">Seçilen {{ $item_name }} Savunma Gücü:</span>
                             <span> {{ $item->item->defence_power }}</span>
                         </p>
-                        @include('components.modal.shop-item-modal-defence-component')
+                        @include('components.modal.inventory-item-modal-defence-component')
                     </div>
                 @elseif($item_name == "Süpürge")
                     <div class="col-md-12">
@@ -92,7 +86,7 @@
                             <span class="text-underline">Seçilen Süpürgenin Hız:</span>
                             <span> {{ $item->item->speed_power }}</span>
                         </p>
-                        @include('components.modal.shop-item-modal-speed-component')
+                        @include('components.modal.inventory-item-modal-speed-component')
                     </div>
                 @endif
             </div>

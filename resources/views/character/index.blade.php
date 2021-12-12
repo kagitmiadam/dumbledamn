@@ -19,57 +19,14 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="equipment-field">
-                                    <p class="title">Ekipman Bilgileri</p>
+                                    @include('components.character-equipment', ['current_equipment'=>"Ekipman Bilgileri"])
+                                </div>
+                                <div class="statistic-field">
+                                    <p class="title">İstatistikler</p>
                                     <hr>
-                                    <div class="character-equipment">
-                                        <div class="equipment-box">
-                                            <p class="title">Asa</p>
-                                            @if ($user->character->wand_id != "")
-                                            <div class="item wand dd-tooltip" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{$user->character->wand->name}}">
-                                                <img src="{{$user->character->wand->image}}" alt="">
-                                            </div>
-                                            @else
-                                            <div class="item wand dd-tooltip" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Mevcut asanız yok. Mağazayı ziyaret ederek satın alabilirsiniz.">
-                                            </div>
-                                            @endif
-                                        </div>
-                                        <div class="equipment-box">
-                                            <p class="title">Pelerin</p>
-                                            @if ($user->character->gown_id != "")
-                                            <div class="item gown dd-tooltip" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{$user->character->gown->name}}">
-                                                <img src="{{$user->character->gown->image}}" alt="">
-                                            </div>
-                                            @else
-                                            <div class="item wand dd-tooltip" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Mevcut pelerininiz yok. Mağazayı ziyaret ederek satın alabilirsiniz.">
-                                            </div>
-                                            @endif
-                                        </div>
-                                        <div class="equipment-box">
-                                            <p class="title">Evcil Hayvan</p>
-                                            @if ($user->character->pet_id != "")
-                                            <div class="item pet dd-tooltip" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{$user->character->pet->name}}">
-                                                <img src="{{$user->character->pet->image}}" alt="">
-                                            </div>
-                                            @else
-                                            <div class="item wand dd-tooltip" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Mevcut evcil hayvanınız yok. Mağazayı ziyaret ederek satın alabilirsiniz.">
-                                            </div>
-                                            @endif
-                                        </div>
-                                        <div class="equipment-box">
-                                            <p class="title">Süpürge</p>
-                                            @if ($user->character->broom_id != "")
-                                            <div class="item broom dd-tooltip" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{$user->character->broom->name}}">
-                                                <img src="{{$user->character->broom->image}}" alt="">
-                                            </div>
-                                            @else
-                                            <div class="item wand dd-tooltip" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Mevcut süpürgeniz yok. Mağazayı ziyaret ederek satın alabilirsiniz.">
-                                            </div>
-                                            @endif
-                                        </div>
-                                    </div>
-                                    <div class="character-new-equipment">
-                                        <div><a href="#" class="btn-{{$user->character->school_class->color}}">Yeni ekipman satın al</a></div>
-                                    </div>
+                                    <p>Saldırı Gücü: {{$user->character->attack_power}}</p>
+                                    <p>Savunma Gücü: {{$user->character->defence_power}}</p>
+                                    <p>Hız: {{$user->character->speed_power}}</p>
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -96,28 +53,80 @@
                                             @endif
                                             {{-- {{ route('get-spell') }} --}}
                                             <div class="character-new-equipment">
-                                                <div><a href="#" class="btn-{{$user->character->school_class->color}}">Tüm büyüleri görüntüle</a></div>
+                                                <div><a href="{{route('get-spell')}}" class="btn-{{$user->character->school_class->color}}">Tüm büyüleri görüntüle</a></div>
                                             </div>
                                         @else
                                         {{-- {{ route('get-spell') }} --}}
-                                        <span>Şuan hiç bir büyü bilmiyorsunuz. <a href="" class="{{$user->character->school_class->color}}-color-link-light">Mevcut büyü listesini</a> inceleyebilir, derslere katılarak yeni büyüler öğrenmeye başlayabilirsiniz!</span>
+                                        <span>Şuan hiç bir büyü bilmiyorsunuz. <a href="{{route('get-spell')}}" class="{{$user->character->school_class->color}}-color-link-light">Mevcut büyü listesini</a> inceleyebilir, derslere katılarak yeni büyüler öğrenmeye başlayabilirsiniz!</span>
                                         @endif
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <div class="inventroy-field">
+                                <div class="inventory-field">
+                                    @php
+                                        $all_character_items = $user->character->character_inventory->sortByDesc('count')->where('status', '=', 1);
+                                        $item_count = $user->character->character_inventory->where('status', 1)->count();
+                                    @endphp
                                     <p class="title">Envanter</p>
                                     <hr>
+                                    @if($item_count > 0)
+                                        <div class="row">
+                                            @foreach($character_items->slice(0,4) as $character_item)
+                                                <div class="col-md-3">
+                                                    <div class="dd-tooltip" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{ $character_item->item->name }}">
+                                                        <div class="img-field">
+                                                            <img src="{{asset($character_item->item->image)}}" alt="" class="icon inventory">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    @endif
+                                    @if($item_count > 4)
+                                        <div class="mb-4">
+                                            <a class="{{$user->character->school_class->color}}-color-link" href="{{ route('get-inventory') }}">
+                                                Tüm envanteri görüntüle
+                                            </a>
+                                        </div>
+                                    @endif
+                                    @if($item_count == 0)
+                                        <div class="mb-4">
+                                            Envanteriniz şuan boş. Mağazaları ziyaret ederek alışveriş yapabilirsiniz.
+                                        </div>
+                                    @endif
                                 </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="statistic-field">
-                                    <p class="title">İstatistikler</p>
+                                <div class="inventory-field">
+                                    @php
+                                        $library_count = $user->character->character_book->where('status', 1)->count();
+                                    @endphp
+                                    <p class="title">Kitap Envanteri</p>
                                     <hr>
-                                    <p>Saldırı Gücü: {{$user->character->attack_power}}</p>
-                                    <p>Savunma Gücü: {{$user->character->defence_power}}</p>
-                                    <p>Hız: {{$user->character->speed_power}}</p>
+                                    @if($library_count > 0)
+                                        <div class="row">
+                                            @foreach($character_books->slice(0,4) as $character_book)
+                                                <div class="col-md-3">
+                                                    <div class="dd-tooltip" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{ $character_book->book->name }}">
+                                                        <div class="img-field">
+                                                            <img src="{{asset($character_book->book->image)}}" alt="" class="icon">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    @endif
+                                    @if($library_count > 4)
+                                        <div>
+                                            <a class="{{$user->character->school_class->color}}-color-link" href="{{ route('get-book-inventory') }}">
+                                                Tüm kitapları görüntüle
+                                            </a>
+                                        </div>
+                                    @endif
+                                    @if($library_count == 0)
+                                        <div class="mb-4">
+                                            Kitap envanteriniz şuan boş. Mağazaları ziyaret ederek alışveriş yapabilirsiniz.
+                                        </div>
+                                    @endif
                                 </div>
                             </div>
                         </div>
