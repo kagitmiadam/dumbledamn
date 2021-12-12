@@ -23,6 +23,7 @@
         <div class="modal-header">
           <h5 class="modal-title" id="wandLabel">
             {{ $item->name }}
+            <img src="{{asset($item->image)}}" alt="" class="icon">
           </h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
@@ -35,13 +36,13 @@
                     </p>
                     @isset($item->wood_id)
                         <p>
-                            <span class="text-underline">Ahşabı:</span>
+                            <span class="text-underline">Ahşap:</span>
                             <span>{{ $item->wood->name }}</span>
                         </p>
                     @endisset
                     @isset($item->core_id)
                         <p>
-                            <span class="text-underline">Özü:</span>
+                            <span class="text-underline">Öz:</span>
                             <span>{{ $item->core->core_name }}</span>
                         </p>
                     @endisset
@@ -51,7 +52,6 @@
                     </p>
                     <hr>
                 </div>
-                @if($item->type == "Asa" or $item->type == "Pelerin" or $item->type == "Evcil Hayvan")
                 <div class="col-md-6">
                     <p class="f-16 text-center text-underline fw-bold">Saldırı Gücü Bilgileri</p>
                     <p>
@@ -63,6 +63,7 @@
                         <span> {{ $item->attack_power }}</span>
                     </p>
                     @include('components.modal.shop-item-modal-attack-component')
+                    <hr>
                 </div>
                 <div class="col-md-6">
                     <p class="f-16 text-center text-underline fw-bold">Savunma Gücü Bilgileri</p>
@@ -75,26 +76,13 @@
                         <span> {{ $item->defence_power }}</span>
                     </p>
                     @include('components.modal.shop-item-modal-defence-component')
+                    <hr>
                 </div>
                 <div class="col-md-12">
-                    <p class="mt-1">
-                        Alacak olduğunuz {{ $item->short_name }} {{ $item_name1 }} envanterinize gidecektir. Kuşanmak için <a href="{{ route('get-item') }}" class="{{$user->character->school_class->color}}-color-link">envanter</a> sayfanızı ziyaret etmeniz gerekmektedir.
+                    <p>
+                        Alacak olduğunuz {{ $item->short_name }} {{ $item_name1 }} envanterinize gidecektir. Kuşanmak için <a href="{{ route('get-item') }}" class="{{$user->character->school_class->color}}-color-link-light">envanter</a> sayfanızı ziyaret etmeniz gerekmektedir.
                     </p>
                 </div>
-                @elseif($item->type == "Süpürge")
-                    <div class="col-md-12">
-                        <p class="f-16 text-center text-underline fw-bold">Hız Bilgileri</p>
-                        <p>
-                            <span class="text-underline">Mevcut Hız:</span>
-                            <span> {{ Auth::user()->character->speed_power }}</span>
-                        </p>
-                        <p>
-                            <span class="text-underline">Seçilen {{ $item_name }} Hızı:</span>
-                            <span> {{ $item->speed_power }}</span>
-                        </p>
-                        @include('components.modal.shop-item-modal-speed-component')
-                    </div>
-                @endif
             </div>
             <hr>
             @if($item_status == 1)

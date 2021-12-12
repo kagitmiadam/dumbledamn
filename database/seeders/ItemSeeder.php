@@ -13,9 +13,11 @@ class ItemSeeder extends Seeder
     {
         $core_names     = Core::all();
         $wood_names     = Wood::all();
+        $wand_id        = 0;
         /* Asalar | Wands */
         foreach ($core_names as $core_name) {
             foreach ($wood_names as $wood_name) {
+                $wand_id = $wand_id + 1;
                 Item::create([
                     'name'          => $core_name->short_name . " " . $wood_name->short_name . " Asası",
                     'short_name'    => $core_name->core_name . " " . $wood_name->short_name . " Asası",
@@ -28,7 +30,7 @@ class ItemSeeder extends Seeder
                     'defence_power' => $core_name->defence_power + $wood_name->defence_power,
                     'based_count'   => 1,
                     'price'         => $core_name->price + $wood_name->price,
-                    'image'         => "img/wand/".$core_name->id.".png",
+                    'image'         => "img/wand/".($wand_id).".png",
                 ]);
             }
         }
@@ -67,20 +69,22 @@ class ItemSeeder extends Seeder
         }
         /* Pelerinler | Gowns */
         $gowns = [
-            // 0: İsim          1:Fiyat     2: Attack   3: Defence  4: Tür          5: Image
-            ["Gryffindor"       , 25        , 0         , 1         , "Başlangıç"   , "img/gown/1.png"],
-            ["Ravenclaw"        , 25        , 0         , 1         , "Başlangıç"   , "img/gown/2.png"],
-            ["Slytherin"        , 25        , 0         , 1         , "Başlangıç"   , "img/gown/3.png"],
-            ["Hufflepuff"       , 25        , 0         , 1         , "Başlangıç"   , "img/gown/4.png"],
-            ["Mezun"            , 50        , 2         , 3         , "Orta"        , "img/gown/5.png"],
-            ["Profesör"         , 100       , 4         , 5         , "Orta"        , "img/gown/6.png"],
-            ["Seherbaz"         , 200       , 6         , 7         , "Üst"         , "img/gown/7.png"],
-            ["Sihir Bakanlığı"  , 500       , 8         , 9         , "Üst"         , "img/gown/8.png"],
-            ["Sihir Bakanı"     , 750       , 10        , 10        , "Üst"         , "img/gown/9.png"],
-            ["Ruh Emici"        , 1000      , 15        , 15        , "Üst"         , "img/gown/10.png"],
+            // 0: İsim          1:Fiyat     2: Attack   3: Defence  4: Tür
+            ["Gryffindor"       , 25        , 0         , 1         , "Başlangıç" ],
+            ["Ravenclaw"        , 25        , 0         , 1         , "Başlangıç" ],
+            ["Slytherin"        , 25        , 0         , 1         , "Başlangıç" ],
+            ["Hufflepuff"       , 25        , 0         , 1         , "Başlangıç" ],
+            ["Mezun"            , 50        , 2         , 3         , "Orta"      ],
+            ["Profesör"         , 100       , 4         , 5         , "Orta"      ],
+            ["Seherbaz"         , 200       , 6         , 7         , "Üst"       ],
+            ["Sihir Bakanlığı"  , 500       , 8         , 9         , "Üst"       ],
+            ["Sihir Bakanı"     , 750       , 10        , 10        , "Üst"       ],
+            ["Ruh Emici"        , 1000      , 15        , 15        , "Üst"       ],
         ];
+        $gown_id        = 0;
         foreach ($gowns as $gown) {
             foreach ($core_names as $core_name) {
+                $gown_id = $gown_id + 1;
                 Item::create([
                     'name'              => $core_name->short_name . " ". $gown[0] . " Cübbesi",
                     'short_name'        => $gown[0] . " Cübbesi",
@@ -92,7 +96,7 @@ class ItemSeeder extends Seeder
                     'attack_power'      => ($gown[2] + $core_name->attack_power),
                     'defence_power'     => ($gown[3] + $core_name->defence_power),
                     'based_count'       => 1,
-                    'image'             => $gown[5],
+                    'image'             => "img/gown/".($gown_id).".png",
                 ]);
             }
         }

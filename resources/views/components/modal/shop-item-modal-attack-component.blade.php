@@ -1,21 +1,21 @@
 @if($item_name == "Asa")
-    @isset(Auth::user()->character->wand_id)
+    @isset($user->character->wand_id)
         <p>
             <span class="text-underline">Mevcut {{ $item_name }} Saldırı Gücü:</span>
-            <span>{{ Auth::user()->character->wand->attack_power }}</span>
+            <span>{{ $user->character->wand->attack_power }}</span>
         </p>
-        @if($item->attack_power > Auth::user()->character->wand->attack_power)
+        @if($item->attack_power > $user->character->wand->attack_power)
             <p>
                 <span class="text-underline">Saldırı Gücü Değişimi:</span>
-                <span>+{{ $item->attack_power - Auth::user()->character->wand->attack_power }}</span>
+                <span>+{{ $item->attack_power - $user->character->wand->attack_power }}</span>
             </p>
             <p>
-                <span>Mevcut saldırı gücünüz +{{ $item->attack_power - Auth::user()->character->wand->attack_power }} artarak {{ Auth::user()->character->attack_power + ($item->attack_power - Auth::user()->character->wand->attack_power) }} olacaktır.</span>
+                <span>Mevcut saldırı gücünüz +{{ $item->attack_power - $user->character->wand->attack_power }} artarak {{ $user->character->attack_power + ($item->attack_power - $user->character->wand->attack_power) }} olacaktır.</span>
             </p>
-        @elseif($item->attack_power == Auth::user()->character->wand->attack_power)
+        @elseif($item->attack_power == $user->character->wand->attack_power)
             <p>
                 <span class="text-underline">Saldırı Gücü Değişimi:</span>
-                <span>{{ $item->attack_power - Auth::user()->character->wand->attack_power }}</span>
+                <span>{{ $item->attack_power - $user->character->wand->attack_power }}</span>
             </p>
             <p>
                 <span>Mevcut saldırı gücünüz değişmeyecektir.</span>
@@ -23,10 +23,10 @@
         @else
             <p>
                 <span class="text-underline">Saldırı Gücü Değişimi:</span>
-                <span>{{ $item->attack_power - Auth::user()->character->wand->attack_power }}</span>
+                <span>{{ $item->attack_power - $user->character->wand->attack_power }}</span>
             </p>
             <p>
-                <span>Mevcut saldırı gücünüz {{ $item->attack_power - Auth::user()->character->wand->attack_power }} azalarak {{ Auth::user()->character->attack_power + ($item->attack_power - Auth::user()->character->wand->attack_power) }} olacaktır.</span>
+                <span>Mevcut saldırı gücünüz {{ $item->attack_power - $user->character->wand->attack_power }} azalarak {{ $user->character->attack_power + ($item->attack_power - $user->character->wand->attack_power) }} olacaktır.</span>
             </p>
         @endif
     @else
@@ -39,27 +39,27 @@
             <span>+{{ $item->attack_power }}</span>
         </p>
         <p>
-            <span>Mevcut saldırı gücünüz +{{ $item->attack_power }} artarak {{ Auth::user()->character->attack_power + ($item->attack_power) }} olacaktır.</span>
+            <span>Mevcut saldırı gücünüz +{{ $item->attack_power }} artarak {{ $user->character->attack_power + ($item->attack_power) }} olacaktır.</span>
         </p>
     @endisset
 @elseif($item_name == "Pelerin")
-    @isset(Auth::user()->character->gown_id)
+    @isset($user->character->gown_id)
         <p>
             <span class="text-underline">Mevcut {{ $item_name }} Saldırı Gücü:</span>
-            <span>{{ Auth::user()->character->gown->attack_power }}</span>
+            <span>{{ $user->character->gown->attack_power }}</span>
         </p>
-        @if($item->attack_power > Auth::user()->character->gown->attack_power)
+        @if($item->attack_power > $user->character->gown->attack_power)
             <p>
                 <span class="text-underline">Saldırı Gücü Değişimi:</span>
-                <span>+{{ $item->attack_power - Auth::user()->character->gown->attack_power }}</span>
+                <span>+{{ $item->attack_power - $user->character->gown->attack_power }}</span>
             </p>
             <p>
-                <span>Mevcut saldırı gücünüz +{{ $item->attack_power - Auth::user()->character->gown->attack_power }} artarak {{ Auth::user()->character->attack_power + ($item->attack_power - Auth::user()->character->gown->attack_power) }} olacaktır.</span>
+                <span>Mevcut saldırı gücünüz +{{ $item->attack_power - $user->character->gown->attack_power }} artarak {{ $user->character->attack_power + ($item->attack_power - $user->character->gown->attack_power) }} olacaktır.</span>
             </p>
-        @elseif($item->attack_power == Auth::user()->character->gown->attack_power)
+        @elseif($item->attack_power == $user->character->gown->attack_power)
             <p>
                 <span class="text-underline">Saldırı Gücü Değişimi:</span>
-                <span>{{ $item->attack_power - Auth::user()->character->gown->attack_power }}</span>
+                <span>{{ $item->attack_power - $user->character->gown->attack_power }}</span>
             </p>
             <p>
                 <span>Mevcut saldırı gücünüz değişmeyecektir.</span>
@@ -67,10 +67,10 @@
         @else
             <p>
                 <span class="text-underline">Saldırı Gücü Değişimi:</span>
-                <span>{{ $item->attack_power - Auth::user()->character->gown->attack_power }}</span>
+                <span>{{ $item->attack_power - $user->character->gown->attack_power }}</span>
             </p>
             <p>
-                <span>Mevcut saldırı gücünüz {{ $item->attack_power - Auth::user()->character->gown->attack_power }} azalarak {{ Auth::user()->character->attack_power + ($item->attack_power - Auth::user()->character->gown->attack_power) }} olacaktır.</span>
+                <span>Mevcut saldırı gücünüz {{ $item->attack_power - $user->character->gown->attack_power }} azalarak {{ $user->character->attack_power + ($item->attack_power - $user->character->gown->attack_power) }} olacaktır.</span>
             </p>
         @endif
     @else
@@ -83,27 +83,27 @@
             <span>+{{ $item->attack_power }}</span>
         </p>
         <p>
-            <span>Mevcut saldırı gücünüz +{{ $item->attack_power }} artarak {{ Auth::user()->character->attack_power + ($item->attack_power) }} olacaktır.</span>
+            <span>Mevcut saldırı gücünüz +{{ $item->attack_power }} artarak {{ $user->character->attack_power + ($item->attack_power) }} olacaktır.</span>
         </p>
     @endisset
 @elseif($item_name == "Evcil Hayvan")
-    @isset(Auth::user()->character->pet_id)
+    @isset($user->character->pet_id)
         <p>
             <span class="text-underline">Mevcut {{ $item_name }} Saldırı Gücü:</span>
-            <span>{{ Auth::user()->character->pet->attack_power }}</span>
+            <span>{{ $user->character->pet->attack_power }}</span>
         </p>
-        @if($item->attack_power > Auth::user()->character->pet->attack_power)
+        @if($item->attack_power > $user->character->pet->attack_power)
             <p>
                 <span class="text-underline">Saldırı Gücü Değişimi:</span>
-                <span>+{{ $item->attack_power - Auth::user()->character->pet->attack_power }}</span>
+                <span>+{{ $item->attack_power - $user->character->pet->attack_power }}</span>
             </p>
             <p>
-                <span>Mevcut saldırı gücünüz +{{ $item->attack_power - Auth::user()->character->pet->attack_power }} artarak {{ Auth::user()->character->attack_power + ($item->attack_power - Auth::user()->character->pet->attack_power) }} olacaktır.</span>
+                <span>Mevcut saldırı gücünüz +{{ $item->attack_power - $user->character->pet->attack_power }} artarak {{ $user->character->attack_power + ($item->attack_power - $user->character->pet->attack_power) }} olacaktır.</span>
             </p>
-        @elseif($item->attack_power == Auth::user()->character->pet->attack_power)
+        @elseif($item->attack_power == $user->character->pet->attack_power)
             <p>
                 <span class="text-underline">Saldırı Gücü Değişimi:</span>
-                <span>{{ $item->attack_power - Auth::user()->character->pet->attack_power }}</span>
+                <span>{{ $item->attack_power - $user->character->pet->attack_power }}</span>
             </p>
             <p>
                 <span>Mevcut saldırı gücünüz değişmeyecektir.</span>
@@ -111,10 +111,10 @@
         @else
             <p>
                 <span class="text-underline">Saldırı Gücü Değişimi:</span>
-                <span>{{ $item->attack_power - Auth::user()->character->pet->attack_power }}</span>
+                <span>{{ $item->attack_power - $user->character->pet->attack_power }}</span>
             </p>
             <p>
-                <span>Mevcut saldırı gücünüz {{ $item->attack_power - Auth::user()->character->pet->attack_power }} azalarak {{ Auth::user()->character->attack_power + ($item->attack_power - Auth::user()->character->pet->attack_power) }} olacaktır.</span>
+                <span>Mevcut saldırı gücünüz {{ $item->attack_power - $user->character->pet->attack_power }} azalarak {{ $user->character->attack_power + ($item->attack_power - $user->character->pet->attack_power) }} olacaktır.</span>
             </p>
         @endif
     @else
@@ -127,7 +127,7 @@
             <span>+{{ $item->attack_power }}</span>
         </p>
         <p>
-            <span>Mevcut saldırı gücünüz +{{ $item->attack_power }} artarak {{ Auth::user()->character->attack_power + ($item->attack_power) }} olacaktır.</span>
+            <span>Mevcut saldırı gücünüz +{{ $item->attack_power }} artarak {{ $user->character->attack_power + ($item->attack_power) }} olacaktır.</span>
         </p>
     @endisset
 @endif

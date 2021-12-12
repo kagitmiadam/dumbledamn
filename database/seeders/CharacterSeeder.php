@@ -21,6 +21,9 @@ class CharacterSeeder extends Seeder
         $character->gown_id = 36;
         $character->broom_id = 76;
         $character->pet_id = 21;
+        $character->attack_power = 22+12+2;
+        $character->defence_power = 17+8+2;
+        $character->speed_power = 10;
         $character->status = "Aktif";
         $character->save();
     }

@@ -13,6 +13,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use DB;
 
 class LocationController extends Controller
 {
@@ -41,7 +42,7 @@ class LocationController extends Controller
         $wands                          = Items::orderBy('price', 'asc')
                                         ->orderBy('name', 'asc')
                                         ->where('type', 'asa')
-                                        ->paginate(15);
+                                        ->get();
         return view('location.wand-shop', [
             'user'                      => $user,
             'id'                        => $id,
@@ -59,10 +60,11 @@ class LocationController extends Controller
         $location                       = Location::find($id);
         $all_locations                  = Location::all();
         $all_periods                    = PeriodCup::all();
+        $character_items                = CharacterInventory::all();
         $gowns                          = Items::
-                                        orderBy('price', 'asc')
+                                        orderBy('id', 'asc')
                                         ->where('type', 'pelerin')
-                                        ->paginate(15);
+                                        ->get();
         return view('location.gown-shop', [
             'user'                      => $user,
             'id'                        => $id,
@@ -71,6 +73,7 @@ class LocationController extends Controller
             'all_locations'             => $all_locations,
             'locations'                 => $all_locations,
             'all_periods'               => $all_periods,
+            'character_items'           => $character_items,
             'gowns'                     => $gowns,
         ]);
     }
@@ -79,10 +82,11 @@ class LocationController extends Controller
         $location                       = Location::find($id);
         $all_locations                  = Location::all();
         $all_periods                    = PeriodCup::all();
+        $character_items                = CharacterInventory::all();
         $brooms                         = Items::
                                         orderBy('price', 'asc')
                                         ->where('type', 'süpürge')
-                                        ->paginate(15);
+                                        ->get();
         return view('location.broom-shop', [
             'user'                      => $user,
             'id'                        => $id,
@@ -91,6 +95,7 @@ class LocationController extends Controller
             'all_locations'             => $all_locations,
             'locations'                 => $all_locations,
             'all_periods'               => $all_periods,
+            'character_items'           => $character_items,
             'brooms'                    => $brooms,
         ]);
     }
@@ -99,10 +104,11 @@ class LocationController extends Controller
         $location                       = Location::find($id);
         $all_locations                  = Location::all();
         $all_periods                    = PeriodCup::all();
+        $character_items                = CharacterInventory::all();
         $pets                           = Items::
                                         orderBy('price', 'asc')
                                         ->where('type', 'evcil hayvan')
-                                        ->paginate(15);
+                                        ->get();
         return view('location.pet-shop', [
             'user'                      => $user,
             'id'                        => $id,
@@ -111,6 +117,7 @@ class LocationController extends Controller
             'all_locations'             => $all_locations,
             'locations'                 => $all_locations,
             'all_periods'               => $all_periods,
+            'character_items'           => $character_items,
             'pets'                      => $pets,
         ]);
     }
@@ -122,7 +129,7 @@ class LocationController extends Controller
         $books                          = Items::
                                         orderBy('price', 'asc')
                                         ->where('type', 'kitap')
-                                        ->paginate(15);
+                                        ->get();
         return view('location.pet-shop', [
             'user'                      => $user,
             'id'                        => $id,
